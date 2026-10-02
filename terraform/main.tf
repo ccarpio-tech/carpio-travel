@@ -47,3 +47,90 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "site" {
     }
   }
 }
+
+# ------------------------------------------------------------------------------
+# CloudFront Origin Access Control (CloudFront signs its requests to S3)
+# ------------------------------------------------------------------------------
+
+resource "aws_cloudfront_origin_access_control" "site" {
+  name                              = "${var.project_name}-oac"
+  description                       = "Lets CloudFront read the private ${local.bucket_name} bucket"
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
+}
+
+# ------------------------------------------------------------------------------
+# CloudFront distribution
+# ------------------------------------------------------------------------------
+
+# AWS-managed cache policy, looked up by name rather than hardcoding its ID.
+data "aws_cloudfront_cache_policy" "caching_optimized" {
+  name = "Managed-CachingOptimized"
+}
+
+resource "aws_cloudfront_distribution" "site" {
+  enabled             = true
+  is_ipv6_enabled     = true
+  comment             = "${var.project_name} static site"
+  default_root_object = "index.html"
+  price_class         = "PriceClass_100" # North America + Europe edges only
+
+  origin {
+    # REST endpoint (not the S3 website endpoint), required for OAC.
+    domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
+    origin_id                = "s3-${local.bucket_name}"
+    origin_access_control_id = aws_cloudfront_origin_access_control.site.id
+  }
+
+  default_cache_behavior {
+    target_origin_id       = "s3-${local.bucket_name}"
+    viewer_protocol_policy = "redirect-to-https"
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    compress               = true
+    cache_policy_id        = data.aws_cloudfront_cache_policy.caching_optimized.id
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
+  # Default *.cloudfront.net certificate for now; replaced by ACM in V2.
+  viewer_certificate {
+    cloudfront_default_certificate = true
+  }
+}
+
+# ------------------------------------------------------------------------------
+# Bucket policy: allow reads only from this CloudFront distribution
+# ------------------------------------------------------------------------------
+
+data "aws_iam_policy_document" "site_bucket" {
+  statement {
+    sid       = "AllowCloudFrontOACRead"
+    actions   = ["s3:GetObject"]
+    resources = ["${aws_s3_bucket.site.arn}/*"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["cloudfront.amazonaws.com"]
+    }
+
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = [aws_cloudfront_distribution.site.arn]
+    }
+  }
+}
+
+resource "aws_s3_bucket_policy" "site" {
+  bucket = aws_s3_bucket.site.id
+  policy = data.aws_iam_policy_document.site_bucket.json
+
+  # Apply the policy after Block Public Access is in place.
+  depends_on = [aws_s3_bucket_public_access_block.site]
+}
