@@ -1,0 +1,188 @@
+/* CarpioTravel additions to the Dimension template.
+   All custom styling lives here; main.css is left as the template shipped it
+   (it is compiled from assets/sass, so hand edits there can be overwritten). */
+
+/* Wider article panels than the template's 40rem so cards and photos have
+   more room. The template's max-width: 100% still applies on small screens. */
+#main article {
+	width: 52rem;
+}
+
+/* ---- Destination card grid ---- */
+
+.travel-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+	margin: 2rem 0;
+}
+
+/* Reset the template's default <button> styling (fixed height, uppercase). */
+#main article .travel-card {
+	position: relative;
+	display: block;
+	height: auto;
+	padding: 0;
+	border: 0;
+	line-height: 1.4;
+	text-align: left;
+	text-transform: none;
+	letter-spacing: normal;
+	white-space: normal;
+	cursor: pointer;
+	background: transparent;
+	border-radius: 4px;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+	overflow: hidden;
+}
+
+#main article .travel-card:focus-visible {
+	box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+#main article .travel-card.is-active {
+	box-shadow: 0 0 0 2px #ffffff;
+}
+
+/* Square frame: crops less from portrait phone photos. */
+.travel-card img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.travel-card:hover img {
+	transform: scale(1.05);
+}
+
+/* Label bar over the bottom of the photo. */
+.travel-card span {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	background: rgba(0, 0, 0, 0.65);
+	color: #ffffff;
+	font-weight: 600;
+	letter-spacing: 0.15rem;
+	text-transform: uppercase;
+}
+
+/* ---- Detail panels shown when a card is clicked ---- */
+
+.travel-detail {
+	margin-top: 2rem;
+}
+
+/* The template's reset sets section { display: block }, which overrides the
+   browser's default [hidden] { display: none }. Restore it for detail panels. */
+.travel-detail[hidden] {
+	display: none;
+}
+
+/* Photo grid inside a detail panel. */
+.travel-gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.75rem;
+	margin: 0 0 1.5rem 0;
+}
+
+#main article .gallery-item {
+	display: block;
+	height: auto;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	cursor: zoom-in;
+	background: transparent;
+	box-shadow: none;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.gallery-item img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+	transform: scale(1.05);
+}
+
+/* Full-size photo viewer (created by travel.js). */
+.lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: 2rem;
+	background: rgba(10, 12, 14, 0.92);
+	cursor: zoom-out;
+}
+
+.lightbox[hidden] {
+	display: none;
+}
+
+.lightbox img {
+	max-width: 100%;
+	max-height: 85vh;
+	border-radius: 4px;
+	box-shadow: 0 0 2rem rgba(0, 0, 0, 0.6);
+}
+
+.lightbox p {
+	margin: 0;
+	font-size: 0.9rem;
+	text-align: center;
+}
+
+/* ---- About: photo beside the intro text ---- */
+
+.about-intro {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin: 0 0 2rem 0;
+}
+
+.about-intro img {
+	width: 45%;
+	flex-shrink: 0;
+	border-radius: 8px;
+}
+
+.about-intro p {
+	margin: 0;
+}
+
+/* ---- Small screens ---- */
+
+@media screen and (max-width: 736px) {
+	.travel-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.travel-gallery {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.about-intro {
+		flex-direction: column;
+	}
+
+	.about-intro img {
+		width: 100%;
+	}
+}
