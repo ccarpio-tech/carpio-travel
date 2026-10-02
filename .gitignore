@@ -1,0 +1,41 @@
+# ---- Terraform ----
+# Provider plugins downloaded by `terraform init` (large binaries, machine-specific)
+.terraform/
+
+# State files contain resource IDs and can contain sensitive values
+*.tfstate
+*.tfstate.*
+
+# Saved plan files (`terraform plan -out=tfplan`) can contain sensitive values
+tfplan
+*.tfplan
+
+# Variable files may hold environment-specific or sensitive values.
+# Commit terraform.tfvars.example instead.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# NOTE: .terraform.lock.hcl is intentionally NOT ignored — it pins provider versions.
+
+# ---- AWS / secrets ----
+.aws/
+*.pem
+*.key
+.env
+.env.*
+
+# ---- macOS / editors ----
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,5 @@
+# Copy to terraform.tfvars and adjust. terraform.tfvars is git-ignored.
+# Never put AWS credentials in this file.
+
+aws_region   = "us-east-1"
+project_name = "carpio-travel"
