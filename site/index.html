@@ -12,7 +12,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description"
-		content="Carpio Travel documents my journey through Vietnam, Laos, Cambodia, and Thailand — built and deployed on AWS with Terraform." />
+		content="Carpio Travel documents my journey through Thailand, Cambodia, Laos, and Vietnam — built and deployed on AWS with Terraform." />
 	<link rel="icon"
 		href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -35,17 +35,17 @@
 			<div class="content">
 				<div class="inner">
 					<h1>Carpio Travel</h1>
-					<p>Vietnam &middot; Laos &middot; Cambodia &middot; Thailand<br />
+					<p>Thailand &middot; Cambodia &middot; Laos &middot; Vietnam<br />
 						A journey through Southeast Asia: the places I explored, the food I found, and the moments I
 						brought home.</p>
 				</div>
 			</div>
 			<nav>
 				<ul>
-					<li><a href="#vietnam">Vietnam</a></li>
-					<li><a href="#laos">Laos</a></li>
-					<li><a href="#cambodia">Cambodia</a></li>
 					<li><a href="#thailand">Thailand</a></li>
+					<li><a href="#cambodia">Cambodia</a></li>
+					<li><a href="#laos">Laos</a></li>
+					<li><a href="#vietnam">Vietnam</a></li>
 					<!-- <li><a href="#went-wrong">Went Wrong</a></li> -->
 					<li><a href="#about">About</a></li>
 				</ul>
@@ -55,347 +55,348 @@
 		<!-- Main -->
 		<div id="main">
 
-			<!-- Vietnam -->
-			<article id="vietnam">
-				<h2 class="major">Vietnam</h2>
-				<span class="image main"><img src="images/vietnam/vietnam.jpg"
-						alt="View from the Hang Mua viewpoint over the karst peaks and rice fields of Ninh Binh, Vietnam" /></span>
-				<p>I traveled Vietnam from north to south, from the mountains to the cities and eventually down to the
-					beaches. Every stop felt completely different, but the people, the food, and the atmosphere made the
-					whole country special to me. These are some of the places and moments that stood out along the way.
-				</p>
+			<!-- Thailand -->
+			<article id="thailand">
+				<h2 class="major">Thailand</h2>
+				<span class="image main"><img src="images/thailand/thailand.jpg"
+						alt="The ruined brick chedi of Wat Chedi Luang in Chiang Mai, Thailand" /></span>
+				<p>Thailand was where my trip began. I started in Bangkok with Wat Arun, golden Buddhas, and late-night
+					tuk-tuk rides, headed north to Chiang Mai for its temples, elephants, and khao soi, then finished on
+					Phuket for Songkran, beach sunsets, night markets, and plenty of street food.</p>
 
+				<p class="travel-hint"><span class="fas fa-hand-pointer" aria-hidden="true"></span> Tap a place to see
+					its photos.</p>
 				<div class="travel-grid">
-					<button type="button" class="travel-card" data-target="vn-hanoi" aria-expanded="false">
-						<img src="images/vietnam/hanoi_street.jpg"
-							alt="Hanoi street decorated with red Vietnamese flags" />
-						<span>Hanoi</span>
+					<button type="button" class="travel-card" data-target="th-bangkok" aria-expanded="false">
+						<img src="images/thailand/bangkok/thumbs/bangkok_wat_arun.jpg"
+							alt="The central prang of Wat Arun" />
+						<span>Bangkok</span>
 					</button>
-					<button type="button" class="travel-card" data-target="vn-sapa" aria-expanded="false">
-						<img src="images/vietnam/sapa_overview.jpg" alt="Rice terraces in the valley below Sapa" />
-						<span>Sapa</span>
+					<button type="button" class="travel-card" data-target="th-chiang-mai" aria-expanded="false">
+						<img src="images/thailand/chiang-mai/thumbs/chiang_mai_zoo_elephants.jpg"
+							alt="Two elephants at Chiang Mai Zoo" />
+						<span>Chiang Mai</span>
 					</button>
-					<button type="button" class="travel-card" data-target="vn-ha-giang" aria-expanded="false">
-						<img src="images/vietnam/ha_giang_loop.jpg"
-							alt="Motorbikes on the switchback roads of the Ha Giang Loop" />
-						<span>Ha Giang Loop</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vn-ninh-binh" aria-expanded="false">
-						<img src="images/vietnam/old_town_ninh_binh.jpg"
-							alt="A lantern and pagoda across the water in Ninh Binh" />
-						<span>Ninh Binh</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vn-hue" aria-expanded="false">
-						<img src="images/vietnam/hue_river_view.jpg"
-							alt="Truong Tien Bridge over the Perfume River in Hue" />
-						<span>Hue</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vn-hoi-an" aria-expanded="false">
-						<img src="images/vietnam/hoi_an_bingo_street.jpg"
-							alt="Bai choi folk bingo on a Hoi An street at night" />
-						<span>Hoi An &amp; Da Nang</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vn-da-lat" aria-expanded="false">
-						<img src="images/vietnam/da_lat_views.jpg" alt="A hilltop sign and flowers above Da Lat" />
-						<span>Da Lat</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vn-hcmc" aria-expanded="false">
-						<img src="images/vietnam/hcmc_thumbnail_post_office.jpg"
-							alt="The arched main hall of the Saigon Central Post Office" />
-						<span>Ho Chi Minh City</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vn-phu-quoc" aria-expanded="false">
-						<img src="images/vietnam/phu_quoc.jpg" alt="Colorful canal-side buildings on Phu Quoc island" />
-						<span>Phu Quoc</span>
+					<button type="button" class="travel-card" data-target="th-phuket" aria-expanded="false">
+						<img src="images/thailand/phuket/thumbs/phuket_beach_sunset.jpg"
+							alt="Sunset over the Andaman Sea with boats on the horizon" />
+						<span>Phuket</span>
 					</button>
 				</div>
 
 				<div class="travel-details">
-					<section id="vn-hanoi" class="travel-detail" hidden>
-						<h3>Hanoi</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/hanoi_street.jpg"
-									alt="Hanoi street strung with red Vietnamese flags" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hanoi_cathedral.jpg"
-									alt="St. Joseph's Cathedral in Hanoi" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/hanoi_egg_coffee_and_donuts.jpg"
-									alt="Egg coffee and donuts in Hanoi" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hanoi_pho.jpg"
-									alt="A bowl of pho with fresh herbs and lime in Hanoi" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hanoi_artwork.jpg"
-									alt="Carved wooden artwork in Hanoi" loading="lazy" /></button>
-						</div>
-						<p>Hanoi was my introduction to Vietnam. I loved the narrow streets, the energy, St. Joseph’s
-							Cathedral, and especially the food. I had phở from a Michelin-starred restaurant, tried egg
-							coffee that tasted almost like tiramisu, and somehow even ended up loving the little donuts
-							sold on the street.</p>
-					</section>
-
-
-					<section id="vn-sapa" class="travel-detail" hidden>
-						<h3>Sapa</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/sapa_overview.jpg"
-									alt="Rice terraces in the valley below Sapa" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/sapa_cat_cat_village.jpg"
-									alt="Waterfall and wooden houses in Cat Cat Village" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/sapa_cat_cat_village_view2.jpg"
-									alt="Stilt houses above the river in Cat Cat Village" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/sapa_sitting_hand_view.jpg"
-									alt="Sitting on a giant stone hand in the mist near Sapa" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/sapa_meal.jpg"
-									alt="A meal overlooking the mountains in Sapa" loading="lazy" /></button>
-						</div>
-						<p>A mountain town in the far northwest, often wrapped in mist, surrounded by rice terraces and
-							villages like Cat Cat.</p>
-					</section>
-
-					<section id="vn-ha-giang" class="travel-detail" hidden>
-						<h3>Ha Giang Loop</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/ha_giang_loop.jpg"
-									alt="Motorbikes on the switchback roads of the Ha Giang Loop"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ha_giang_loop_view_2.jpg"
-									alt="Mountain valley on the Ha Giang Loop" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ha_giang_loop_view_3.jpg"
-									alt="Mist over the valley on the Ha Giang Loop" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ha_giang_loop_view_4.jpg"
-									alt="Riding a motorbike along a mountain road on the Ha Giang Loop"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ha_giang_loop_mountain_view.jpg"
-									alt="Standing beside a Vietnamese flag above the Ha Giang mountains"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ha_giang_loop_tour_fam.jpg"
-									alt="The Ha Giang Loop tour group with a Vietnamese flag" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ha_giang_loop_motorbike_funny.jpg"
-									alt="A motorbike carrying a huge load of sticks on the Ha Giang Loop"
-									loading="lazy" /></button>
-						</div>
-						<p>A multi-day motorbike loop through the mountains near the Chinese border, on switchback roads
-							like the one in this site's background.</p>
-					</section>
-
-					<section id="vn-ninh-binh" class="travel-detail" hidden>
-						<h3>Ninh Binh</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/vietnam.jpg"
-									alt="View from Hang Mua over the karst peaks and rice fields of Ninh Binh"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/ninh_binh_boat_ride.jpg"
-									alt="Boat ride on the river between the karsts of Ninh Binh"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/old_town_ninh_binh.jpg"
-									alt="A lantern and pagoda across the water in Ninh Binh" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/feeding_ducks_ninh_binh.jpg" alt="Feeding a flock of ducks"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ninh_binh_food_mountain_goat.jpg"
-									alt="Sizzling mountain goat, a Ninh Binh specialty" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/ninh_binh_pig_ear_and_chicken.jpg"
-									alt="Pig ear and chicken dishes in Ninh Binh" loading="lazy" /></button>
-						</div>
-						<p>Limestone karsts rising out of rice fields and rivers, often called &ldquo;Ha Long Bay on
-							land.&rdquo; Best seen from the top of Hang Mua or from a rowboat on the river, followed by
-							the local specialty: mountain goat.</p>
-					</section>
-
-					<section id="vn-hue" class="travel-detail" hidden>
-						<h3>Hue</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/hue_river_view.jpg"
-									alt="Truong Tien Bridge over the Perfume River in Hue" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hue_building.jpg"
-									alt="The Flag Tower of the Hue Citadel" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hue_dragon_picture.jpg"
-									alt="In front of the dragon at the abandoned Thuy Tien water park near Hue"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hue_drinks.jpg"
-									alt="Fruit smoothies at a cafe in Hue" loading="lazy" /></button>
-						</div>
-						<p>Vietnam's imperial capital under the Nguyen dynasty, on the Perfume River: the Citadel,
-							Truong Tien Bridge, and the giant dragon of the abandoned Thuy Tien water park outside the
-							city.</p>
-					</section>
-
-					<section id="vn-hoi-an" class="travel-detail" hidden>
-						<h3>Hoi An &amp; Da Nang</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/hoi_an_bingo_street.jpg"
-									alt="Bai choi folk bingo on a Hoi An street at night" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hoi_an_vietnam_food.jpg"
-									alt="Noodles with fresh herbs in Hoi An" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/hoi_an_cooking_class.jpg"
-									alt="Dishes made at a Hoi An cooking class" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/hoi_an_da_nang_coffee_making_class.jpg"
-									alt="A Vietnamese coffee-making class" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hoi_an_da_nang_food.jpg"
-									alt="A spread of Vietnamese dishes in Da Nang" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hoi_an_drinks_night.jpg"
-									alt="Cocktails under neon lights in Hoi An" loading="lazy" /></button>
-						</div>
-						<p>Hoi An's lantern-lit old town is a UNESCO World Heritage Site about 30 km from the beach city
-							of Da Nang, known for its street games at night, cooking and coffee classes, and some of the
-							best food in central Vietnam.</p>
-					</section>
-
-					<section id="vn-da-lat" class="travel-detail" hidden>
-						<h3>Da Lat</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/da_lat_views.jpg"
-									alt="A hilltop sign and flowers above Da Lat" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/da_lat_mario_kart_like.jpg"
-									alt="Go-karts at an amusement park in Da Lat" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/da_lat_vietnam_pizza.jpg"
-									alt="Banh trang nuong, Vietnamese pizza, on the grill in Da Lat"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/da_lat_street_food.jpg"
-									alt="A bowl of street food in Da Lat" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/da_lat_coffee_cig.jpg"
-									alt="Vietnamese iced coffee on a Da Lat street" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/da_lat_sleeper_bus.jpg"
-									alt="Inside a sleeper bus to Da Lat" loading="lazy" /></button>
-						</div>
-						<p>A cool highland city in the Central Highlands, known for pine forests, flowers, coffee, and
-							b&aacute;nh tr&aacute;ng n&#432;&#7899;ng, often called &ldquo;Vietnamese pizza.&rdquo;</p>
-					</section>
-
-					<section id="vn-hcmc" class="travel-detail" hidden>
-						<h3>Ho Chi Minh City</h3>
+					<section id="th-bangkok" class="travel-detail" hidden>
+						<h3>Bangkok</h3>
 						<div class="travel-gallery">
 							<button type="button" class="gallery-item"><img
-									src="images/vietnam/hcmc_thumbnail_post_office.jpg"
-									alt="The arched main hall of the Saigon Central Post Office"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hcmc_post_office.jpg"
-									alt="Details of the Saigon Central Post Office" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hcmc_bridge.jpg"
-									alt="A cable-stayed bridge lit up at night in Ho Chi Minh City"
+									src="images/thailand/bangkok/thumbs/bangkok_wat_arun.jpg"
+									data-full="images/thailand/bangkok/bangkok_wat_arun.jpg"
+									alt="The central prang of Wat Arun" data-caption="Wat Arun, the Temple of Dawn."
 									loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/vietnam/hcmc_bui_vien_street.jpg" alt="Bui Vien walking street at night"
+									src="images/thailand/bangkok/thumbs/bangkok_temple_guardian.jpg"
+									data-full="images/thailand/bangkok/bangkok_temple_guardian.jpg"
+									alt="A golden giant guardian statue in a temple alcove"
+									data-caption="One of the giant guardians at a Bangkok temple."
 									loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/vietnam/hcmc_meal_street_food.jpg"
-									alt="Broken rice with egg and scallion oil" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/hcmc_4ps_pizza.jpg"
-									alt="Pizza at Pizza 4P's in Ho Chi Minh City" loading="lazy" /></button>
-						</div>
-						<p>Vietnam's largest city, formerly Saigon: the French colonial-era Central Post Office, bridges
-							lit up at night, Bui Vien walking street, and broken rice on every corner.</p>
-					</section>
-
-					<section id="vn-phu-quoc" class="travel-detail" hidden>
-						<h3>Phu Quoc</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/vietnam/phu_quoc.jpg"
-									alt="Colorful canal-side buildings on Phu Quoc island" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/phu_quoc_street.jpg"
-									alt="A street of colorful buildings on Phu Quoc" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/phu_quoc_night_life.jpg"
-									alt="A clock tower lit up at night on Phu Quoc" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/vietnam/phu_quoc_cafe.jpg"
-									alt="Inside a cafe on Phu Quoc" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/vietnam/phu_quoc_seafood_pho.jpg" alt="Seafood noodle soup on Phu Quoc"
-									loading="lazy" /></button>
-						</div>
-						<p>An island off Vietnam's southwest coast with a colorful European-style town, a clock tower
-							that lights up at night, cozy cafes, and fresh seafood.</p>
-					</section>
-				</div>
-			</article>
-
-			<!-- Laos -->
-			<article id="laos">
-				<h2 class="major">Laos</h2>
-				<span class="image main"><img src="images/laos/laos.jpg"
-						alt="A hot-air balloon over the karst mountains of Vang Vieng, Laos, at sunrise" /></span>
-				<p>Laos was the slowest and most peaceful part of my trip. I crossed the border from Cambodia to Don Det
-					in the 4,000 Islands, made my way north to Luang Prabang for its gilded temples, Mekong sunsets, and
-					the turquoise pools of Kuang Si Falls, and finished in Vang Vieng, where hot-air balloons rise over
-					the mountains at sunrise.</p>
-
-				<div class="travel-grid">
-					<button type="button" class="travel-card" data-target="luang-prabang" aria-expanded="false">
-						<img src="images/laos/luang_prabang_temple.jpg" alt="Gilded temple facade in Luang Prabang" />
-						<span>Luang Prabang</span>
-					</button>
-					<button type="button" class="travel-card" data-target="vang-vieng" aria-expanded="false">
-						<img src="images/laos/vang_vieng_balloons.jpg"
-							alt="Hot-air balloons above the valley at Vang Vieng" />
-						<span>Vang Vieng</span>
-					</button>
-					<button type="button" class="travel-card" data-target="don-det" aria-expanded="false">
-						<img src="images/laos/don_det_waterfall.jpg"
-							alt="Mekong rapids near Don Det in the 4,000 Islands" />
-						<span>Don Det</span>
-					</button>
-				</div>
-
-				<div class="travel-details">
-					<section id="luang-prabang" class="travel-detail" hidden>
-						<h3>Luang Prabang</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/laos/luang_prabang_temple.jpg"
-									alt="Gilded temple facade in Luang Prabang" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/laos/luang_prabang_sunset.jpg"
-									alt="Sunset over the Mekong River from Luang Prabang" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img
-									src="images/laos/luang_prabang_chicken_laap.jpg" alt="Chicken laap in Luang Prabang"
+									src="images/thailand/bangkok/thumbs/bangkok_golden_buddha.jpg"
+									data-full="images/thailand/bangkok/bangkok_golden_buddha.jpg"
+									alt="A golden Buddha under chandeliers inside a temple"
+									data-caption="A golden Buddha and chandeliers inside a temple."
 									loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/laos/luang_prabang_waterfall.jpg"
-									alt="Turquoise tiered pools at Kuang Si Falls near Luang Prabang"
+									src="images/thailand/bangkok/thumbs/bangkok_buddha_row.jpg"
+									data-full="images/thailand/bangkok/bangkok_buddha_row.jpg"
+									alt="A long row of seated golden Buddha statues along a white wall"
+									data-caption="A row of golden Buddhas lining the temple wall."
 									loading="lazy" /></button>
-						</div>
-						<p>Luang Prabang was one of my stops in northern Laos. Temples, night markets, the Mekong River,
-							and a much slower atmosphere than the larger cities I visited.</p>
-					</section>
-
-					<section id="vang-vieng" class="travel-detail" hidden>
-						<h3>Vang Vieng</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/laos/vang_vieng_balloons.jpg"
-									alt="Hot-air balloons above the valley at Vang Vieng" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/laos/laos.jpg"
-									alt="A hot-air balloon over the karst mountains of Vang Vieng at sunrise"
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_river_boat.jpg"
+									data-full="images/thailand/bangkok/bangkok_river_boat.jpg"
+									alt="A wooden boat docked on the Chao Phraya River"
+									data-caption="A boat on the Chao Phraya River." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_chinatown.jpg"
+									data-full="images/thailand/bangkok/bangkok_chinatown.jpg"
+									alt="Red and gold neon signs over a Chinatown street at night"
+									data-caption="Chinatown at night." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_rainy_night.jpg"
+									data-full="images/thailand/bangkok/bangkok_rainy_night.jpg"
+									alt="Red lanterns strung over a wet street at night"
+									data-caption="A rainy night under the red lanterns." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_tuktuk.jpg"
+									data-full="images/thailand/bangkok/bangkok_tuktuk.jpg"
+									alt="The view from the back seat of a tuk-tuk at night"
+									data-caption="A late-night tuk-tuk ride." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_muay_thai_stadium.jpg"
+									data-full="images/thailand/bangkok/bangkok_muay_thai_stadium.jpg"
+									alt="Fighters in the ring at a packed Muay Thai stadium"
+									data-caption="Fight night at a big Muay Thai stadium." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_mall.jpg"
+									data-full="images/thailand/bangkok/bangkok_mall.jpg"
+									alt="A multi-level atrium inside a modern mall"
+									data-caption="Bangkok's malls are on another level." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_giant_dog_sculpture.jpg"
+									data-full="images/thailand/bangkok/bangkok_giant_dog_sculpture.jpg"
+									alt="A giant sleeping dog sculpture inside a mall"
+									data-caption="A giant sleeping dog at the mall. Why not." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_jj_market_mural.jpg"
+									data-full="images/thailand/bangkok/bangkok_jj_market_mural.jpg"
+									alt="A colorful graffiti mural with cartoon characters"
+									data-caption="Street art at J.J. Market." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_hostel_gym.jpg"
+									data-full="images/thailand/bangkok/bangkok_hostel_gym.jpg"
+									alt="An outdoor gym with a bench and homemade concrete weights on artificial turf"
+									data-caption="The hostel gym. Concrete-block dumbbells, lol."
 									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_mall_ramen.jpg"
+									data-full="images/thailand/bangkok/bangkok_mall_ramen.jpg"
+									alt="Ramen, gyoza, and a smoothie at a mall food court"
+									data-caption="Ramen and gyoza at the mall." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/bangkok/thumbs/bangkok_noodle_soup.jpg"
+									data-full="images/thailand/bangkok/bangkok_noodle_soup.jpg"
+									alt="A bowl of noodle soup with meatballs on a red table"
+									data-caption="A random noodle spot. So good." loading="lazy" /></button>
 						</div>
-						<p>Vang Vieng had some of the most dramatic scenery of the trip. Limestone mountains surround
-							the
-							town, and seeing hot-air balloons above them at sunrise was incredible.</p>
-					</section>
-
-					<section id="don-det" class="travel-detail" hidden>
-						<h3>Don Det</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/laos/don_det_waterfall.jpg"
-									alt="Mekong rapids near Don Det in the 4,000 Islands" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/laos/don_det_laos_meal.jpg"
-									alt="Noodle soup by the Mekong River on Don Det" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/laos/laos_border.jpg"
-									alt="The Laos–Cambodia border crossing near Don Det" loading="lazy" /></button>
-						</div>
-						<p>Don Det sits in the 4,000 Islands region of southern Laos along the Mekong River. This part
+						<p>Bangkok was where my trip began. I visited Wat Arun on the Chao Phraya River and temples full
 							of
-							the trip was much more relaxed and slower paced.</p>
+							golden Buddhas and giant guardian statues, explored Chinatown’s neon streets, went to a Muay
+							Thai fight night at a big stadium, and took late-night tuk-tuk rides. The malls here are on
+							another level (one even has a giant sleeping dog), and the hostel gym used concrete blocks
+							for
+							dumbbells.</p>
+					</section>
+
+					<section id="th-chiang-mai" class="travel-detail" hidden>
+						<h3>Chiang Mai</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img src="images/thailand/thumbs/thailand.jpg"
+									data-full="images/thailand/thailand.jpg"
+									alt="The ruined brick chedi of Wat Chedi Luang"
+									data-caption="Wat Chedi Luang's huge, half-ruined chedi." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_wat_chedi_luang.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_wat_chedi_luang.jpg"
+									alt="Wat Chedi Luang's brick chedi under a blue sky"
+									data-caption="Another angle. Photos don't show how big it is."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_temple.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_temple.jpg"
+									alt="A white and gold temple hall with a golden statue out front"
+									data-caption="One of the many temples in the old city." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_temple_entrance.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_temple_entrance.jpg"
+									alt="An ornate temple entrance with a portrait of the Thai king"
+									data-caption="A temple entrance with a portrait of the King."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_temple_offerings.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_temple_offerings.jpg"
+									alt="Holding marigold garlands and flowers as temple offerings"
+									data-caption="Flowers and marigolds to offer at the temple."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_zoo_elephants.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_zoo_elephants.jpg"
+									alt="Two elephants at Chiang Mai Zoo"
+									data-caption="Elephants at the Chiang Mai Zoo." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_zoo_capybaras.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_zoo_capybaras.jpg"
+									alt="Capybaras resting under trees" data-caption="Capybaras, just chilling."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_zoo_flamingos.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_zoo_flamingos.jpg"
+									alt="Pink flamingos wading in a pond" data-caption="Flamingos at the zoo."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_grand_canyon_water_park.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_grand_canyon_water_park.jpg"
+									alt="An inflatable obstacle course on the water at the Grand Canyon water park"
+									data-caption="Grand Canyon water park. Basically real-life Wipeout."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_night_garden.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_night_garden.jpg"
+									alt="A garden path lit with string lights at night"
+									data-caption="Chiang Mai at night." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_night_market.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_night_market.jpg"
+									alt="Grilled skewers on banana leaves at a night market stall"
+									data-caption="Night market skewers for 10 to 20 baht each."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_night_market_pork.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_night_market_pork.jpg"
+									alt="A plate of crispy pork tossed with herbs and chili"
+									data-caption="Crispy pork from the night market." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_night_market_dumplings.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_night_market_dumplings.jpg"
+									alt="Fried dumplings, a grilled skewer, and a can of beer"
+									data-caption="Fried dumplings, a skewer, and a cold beer."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_street_food_skewers.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_street_food_skewers.jpg"
+									alt="Fish ball and sausage skewers at a street food stall"
+									data-caption="Fish balls and sausages on sticks." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_street_sushi.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_street_sushi.jpg"
+									alt="Trays of colorful sushi at a street stall"
+									data-caption="Street sushi, by the tray." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_street_food_lunch.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_street_food_lunch.jpg"
+									alt="A table of crispy pork, fried chicken, and papaya salad"
+									data-caption="Lunch spread: crispy pork, fried chicken, and som tam."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_khao_soi.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_khao_soi.jpg"
+									alt="A bowl of khao soi next to a curry served in a coconut"
+									data-caption="Khao soi, northern Thailand's curry noodle soup."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/chiang-mai/thumbs/chiang_mai_birria_tacos.jpg"
+									data-full="images/thailand/chiang-mai/chiang_mai_birria_tacos.jpg"
+									alt="Birria tacos with bowls of consomme"
+									data-caption="Birria tacos in Chiang Mai. Don't ask why, lol."
+									loading="lazy" /></button>
+						</div>
+						<p>Chiang Mai is northern Thailand’s cultural center. I visited the huge, half-ruined chedi of
+							Wat
+							Chedi Luang and brought flower offerings to the temples in the old city. I also saw
+							elephants,
+							capybaras, and flamingos at the zoo, and tried the Grand Canyon water park, which is
+							basically
+							real-life Wipeout. The food was nonstop: khao soi, night market skewers, street sushi, and
+							somehow even birria tacos.</p>
+					</section>
+
+					<section id="th-phuket" class="travel-detail" hidden>
+						<h3>Phuket</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_beach_sunset.jpg"
+									data-full="images/thailand/phuket/phuket_beach_sunset.jpg"
+									alt="Sunset over the Andaman Sea with boats on the horizon"
+									data-caption="Sunset over the Andaman Sea." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_street.jpg"
+									data-full="images/thailand/phuket/phuket_street.jpg"
+									alt="A Phuket street with red lanterns and tangled power lines"
+									data-caption="The roads around Phuket." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_neon_buildings.jpg"
+									data-full="images/thailand/phuket/phuket_neon_buildings.jpg"
+									alt="Colorful neon-lit building facades" data-caption="Colorful neon-lit buildings."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_naka_market.jpg"
+									data-full="images/thailand/phuket/phuket_naka_market.jpg"
+									alt="The lit-up entrance to Naka Weekend Market" data-caption="Naka Weekend Market."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_market_lights.jpg"
+									data-full="images/thailand/phuket/phuket_market_lights.jpg"
+									alt="Light displays at a night market"
+									data-caption="Light displays at the night market." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_sunday_market_sausages.jpg"
+									data-full="images/thailand/phuket/phuket_sunday_market_sausages.jpg"
+									alt="A cup of sausages at a busy street market"
+									data-caption="Sausages from the Sunday market." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_painted_boxes.jpg"
+									data-full="images/thailand/phuket/phuket_painted_boxes.jpg"
+									alt="Rows of hand-painted souvenir boxes"
+									data-caption="Hand-painted boxes for sale." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_mall_statue.jpg"
+									data-full="images/thailand/phuket/phuket_mall_statue.jpg"
+									alt="A large multi-armed wooden statue inside a mall"
+									data-caption="A huge statue inside one of the malls." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_songkran_foam_party.jpg"
+									data-full="images/thailand/phuket/phuket_songkran_foam_party.jpg"
+									alt="A foam party at night during Songkran"
+									data-caption="Songkran, the Thai New Year water festival. Foam party included."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_songkran_music_show.jpg"
+									data-full="images/thailand/phuket/phuket_songkran_music_show.jpg"
+									alt="Water jets and screens at a Songkran concert at night"
+									data-caption="The Songkran music show." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_songkran_crowd.jpg"
+									data-full="images/thailand/phuket/phuket_songkran_crowd.jpg"
+									alt="A crowd walking under flag bunting during Songkran"
+									data-caption="Walking with the Songkran crowds. Everyone gets soaked."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_painting_hello_kitty.jpg"
+									data-full="images/thailand/phuket/phuket_painting_hello_kitty.jpg"
+									alt="Painting a small Hello Kitty figure with a palette of paints"
+									data-caption="We painted Hello Kitty figures just so we could sit down and eat. The only seats were for people painting."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_haircut.jpg"
+									data-full="images/thailand/phuket/phuket_haircut.jpg"
+									alt="Getting a haircut at a barbershop" data-caption="My first haircut in Thailand."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_hotel_room.jpg"
+									data-full="images/thailand/phuket/phuket_hotel_room.jpg"
+									alt="A clean, modern hotel room with a balcony" data-caption="Home base in Phuket."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_home_cooked_meal.jpg"
+									data-full="images/thailand/phuket/phuket_home_cooked_meal.jpg"
+									alt="A bowl of noodle soup with greens, mushrooms, and meatballs"
+									data-caption="A home-cooked meal. A nice break from eating out."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_pad_krapow.jpg"
+									data-full="images/thailand/phuket/phuket_pad_krapow.jpg"
+									alt="Pad kra pao with rice and a fried egg"
+									data-caption="Pad kra pao with a fried egg on top." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_crocodile_tom_yum_gyoza.jpg"
+									data-full="images/thailand/phuket/phuket_crocodile_tom_yum_gyoza.jpg"
+									alt="Crocodile skewers, tom yum, and gyoza"
+									data-caption="Crocodile skewers, tom yum, and gyoza. Yes, crocodile."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/thailand/phuket/thumbs/phuket_crispy_pork.jpg"
+									data-full="images/thailand/phuket/phuket_crispy_pork.jpg"
+									alt="Crispy pork belly in a paper wrap"
+									data-caption="Overpriced crispy pork. Still ate it." loading="lazy" /></button>
+						</div>
+						<p>Phuket is Thailand’s largest island, on the Andaman Sea. I was there for Songkran, the Thai
+							New
+							Year water festival, with foam parties, a music show, and crowds where everyone gets soaked.
+							I
+							also watched sunsets over the sea, explored Naka Weekend Market and the Sunday market, got
+							my
+							first haircut in Thailand, and painted Hello Kitty figures just to get a seat to eat. The
+							food
+							ranged from pad kra pao to crocodile skewers.</p>
 					</section>
 
 				</div>
@@ -410,14 +411,17 @@
 					and Ta Prohm, and spent the evenings on Pub Street and at the night markets. Then I traveled south
 					to the capital, Phnom Penh, before crossing the border into Laos.</p>
 
+				<p class="travel-hint"><span class="fas fa-hand-pointer" aria-hidden="true"></span> Tap a place to see
+					its photos.</p>
 				<div class="travel-grid">
 					<button type="button" class="travel-card" data-target="kh-siem-reap" aria-expanded="false">
-						<img src="images/cambodia/cambodia_angkor_wat.jpg"
-							alt="The towers of Angkor Wat, near Siem Reap" />
+						<img src="images/cambodia/siem-reap/thumbs/siem_reap_angkor_wat.jpg"
+							alt="The towers of Angkor Wat, one partly under scaffolding" />
 						<span>Siem Reap</span>
 					</button>
 					<button type="button" class="travel-card" data-target="kh-phnom-penh" aria-expanded="false">
-						<img src="images/cambodia/phnom_penh_building.jpg" alt="The Royal Palace in Phnom Penh" />
+						<img src="images/cambodia/phnom-penh/thumbs/phnom_penh_royal_palace.jpg"
+							alt="The Royal Palace in Phnom Penh under a cloudy sky" />
 						<span>Phnom Penh</span>
 					</button>
 				</div>
@@ -427,133 +431,1112 @@
 						<h3>Siem Reap</h3>
 						<div class="travel-gallery">
 							<button type="button" class="gallery-item"><img
-									src="images/cambodia/cambodia_angkor_wat.jpg" alt="The towers of Angkor Wat"
+									src="images/cambodia/siem-reap/thumbs/siem_reap_angkor_wat.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_angkor_wat.jpg"
+									alt="The towers of Angkor Wat, one partly under scaffolding"
+									data-caption="Angkor Wat. Massive in person." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/cambodia/siem-reap/thumbs/siem_reap_angkor_wat_courtyard.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_angkor_wat_courtyard.jpg"
+									alt="Inner galleries and a dry stone pool inside Angkor Wat"
+									data-caption="Inside Angkor Wat's inner courtyard." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/cambodia/siem-reap/thumbs/siem_reap_ta_prohm.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_ta_prohm.jpg"
+									alt="Collapsed stone ruins under giant trees at Ta Prohm"
+									data-caption="Ta Prohm, where the jungle is taking the temple back."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img src="images/cambodia/thumbs/cambodia.jpg"
+									data-full="images/cambodia/cambodia.jpg"
+									alt="Carved stone devatas on a temple gopura at Ta Prohm"
+									data-caption="Carvings at Ta Prohm. Every inch of stone is covered."
 									loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/cambodia/cambodia_angkor_wat_2.jpg"
-									alt="Inner galleries and courtyard of Angkor Wat" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/cambodia/cambodia_ta_prohm.jpg"
-									alt="Trees growing over the ruins of Ta Prohm" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/cambodia/cambodia.jpg"
-									alt="Carved stone devatas on a temple gopura at Ta Prohm" loading="lazy" /></button>
+									src="images/cambodia/siem-reap/thumbs/siem_reap_arrival_sunset.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_arrival_sunset.jpg"
+									alt="Sunset over the highway, seen from a tuk-tuk on the way into Siem Reap"
+									data-caption="Arriving in Siem Reap by tuk-tuk at sunset."
+									loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/cambodia/siem_reap_nightlife.jpg"
-									alt="The neon Pub Street sign in Siem Reap" loading="lazy" /></button>
+									src="images/cambodia/siem-reap/thumbs/siem_reap_pub_street.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_pub_street.jpg"
+									alt="The neon Pub Street sign above a crowded street at night"
+									data-caption="Pub Street at night." loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/cambodia/cambodia_night_market_food.jpg"
-									alt="Skewers of street food at a Siem Reap night market" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/cambodia/cambodia_arrival.jpg"
-									alt="Sunset on the road into Siem Reap" loading="lazy" /></button>
+									src="images/cambodia/siem-reap/thumbs/siem_reap_night_market_skewers.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_night_market_skewers.jpg"
+									alt="A hot pot surrounded by skewers at a night market stall"
+									data-caption="Pick your skewers and they cook them in the pot."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/cambodia/siem-reap/thumbs/siem_reap_70_cent_beer.jpg"
+									data-full="images/cambodia/siem-reap/siem_reap_70_cent_beer.jpg"
+									alt="Holding a can of Ganz beer" data-caption="A 70-cent beer. Hard to beat."
+									loading="lazy" /></button>
 						</div>
-						<p>The gateway town for the temples of Angkor. I visited Angkor Wat, the centerpiece of the
-							Khmer Empire and one of the largest religious monuments in the world, and Ta Prohm, where
-							giant tree roots grow straight through the stone. After the temples: Pub Street and the
-							night markets.</p>
+						<p>Siem Reap is the gateway to the temples of Angkor. I arrived by tuk-tuk at sunset, then
+							explored
+							Angkor Wat, one of the largest religious monuments in the world, and Ta Prohm, where giant
+							trees
+							grow straight through the stone. After the temples it was Pub Street, night market skewers
+							cooked in a hot pot, and 70-cent beers.</p>
 					</section>
 
 					<section id="kh-phnom-penh" class="travel-detail" hidden>
 						<h3>Phnom Penh</h3>
 						<div class="travel-gallery">
 							<button type="button" class="gallery-item"><img
-									src="images/cambodia/phnom_penh_building.jpg" alt="The Royal Palace in Phnom Penh"
-									loading="lazy" /></button>
+									src="images/cambodia/phnom-penh/thumbs/phnom_penh_royal_palace.jpg"
+									data-full="images/cambodia/phnom-penh/phnom_penh_royal_palace.jpg"
+									alt="The Royal Palace in Phnom Penh under a cloudy sky"
+									data-caption="The Royal Palace." loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/cambodia/phnom_penh_nightview.jpg"
-									alt="A neon-lit street in Phnom Penh at night" loading="lazy" /></button>
+									src="images/cambodia/phnom-penh/thumbs/phnom_penh_neon_alley.jpg"
+									data-full="images/cambodia/phnom-penh/phnom_penh_neon_alley.jpg"
+									alt="A narrow alley lit with neon signs and red lanterns at night"
+									data-caption="One of Phnom Penh's neon-lit alleys." loading="lazy" /></button>
 						</div>
-						<p>Cambodia's capital, where the Mekong and Tonl&eacute; Sap rivers meet: the Royal Palace by
-							day and neon-lit streets after dark.</p>
+						<p>Cambodia’s capital, where the Mekong and Tonlé Sap rivers meet. I visited the Royal Palace by
+							day and wandered the neon-lit alleys after dark before heading on to Laos.</p>
 					</section>
 				</div>
 			</article>
 
-			<!-- Thailand -->
-			<article id="thailand">
-				<h2 class="major">Thailand</h2>
-				<span class="image main"><img src="images/thailand/thailand.jpg"
-						alt="The ruined brick chedi of Wat Chedi Luang in Chiang Mai, Thailand" /></span>
-				<p>Thailand was where my trip began. I started in Bangkok with Wat Arun, golden Buddhas, and late-night
-					tuk-tuk rides, headed north to Chiang Mai for its temples, elephants, and khao soi, then finished on
-					Phuket with beach sunsets, night markets, and plenty of street food.</p>
+			<!-- Laos -->
+			<article id="laos">
+				<h2 class="major">Laos</h2>
+				<span class="image main"><img src="images/laos/laos.jpg"
+						alt="A hot-air balloon over the karst mountains of Vang Vieng, Laos, at sunrise" /></span>
+				<p>Laos was the slowest and most peaceful part of my trip. I crossed the border from Cambodia to Don Det
+					in the 4,000 Islands, made my way north to Luang Prabang for its gilded temples, Mekong sunsets, and
+					the turquoise pools of Kuang Si Falls, and finished in Vang Vieng, where hot-air balloons rise over
+					the mountains at sunrise.</p>
 
+				<p class="travel-hint"><span class="fas fa-hand-pointer" aria-hidden="true"></span> Tap a place to see
+					its photos.</p>
 				<div class="travel-grid">
-					<button type="button" class="travel-card" data-target="th-bangkok" aria-expanded="false">
-						<img src="images/thailand/bangkok_wat_arun.jpg"
-							alt="The central prang of Wat Arun in Bangkok" />
-						<span>Bangkok</span>
+					<button type="button" class="travel-card" data-target="luang-prabang" aria-expanded="false">
+						<img src="images/laos/luang-prabang/thumbs/luang_prabang_temple.jpg"
+							alt="Gilded temple facade in Luang Prabang" />
+						<span>Luang Prabang</span>
 					</button>
-					<button type="button" class="travel-card" data-target="th-chiang-mai" aria-expanded="false">
-						<img src="images/thailand/chiang_mai_zoo.jpg" alt="Elephants in Chiang Mai" />
-						<span>Chiang Mai</span>
+					<button type="button" class="travel-card" data-target="vang-vieng" aria-expanded="false">
+						<img src="images/laos/vang-vieng/thumbs/vang_vieng_balloons.jpg"
+							alt="Hot-air balloons over the valley and rice fields of Vang Vieng" />
+						<span>Vang Vieng</span>
 					</button>
-					<button type="button" class="travel-card" data-target="th-phuket" aria-expanded="false">
-						<img src="images/thailand/phuket_beach_view.jpg"
-							alt="Sunset over the Andaman Sea from a Phuket beach" />
-						<span>Phuket</span>
+					<button type="button" class="travel-card" data-target="don-det" aria-expanded="false">
+						<img src="images/laos/don-det/thumbs/don_det_mekong_falls.jpg"
+							alt="Mekong rapids near Don Det in the 4,000 Islands" />
+						<span>Don Det</span>
 					</button>
 				</div>
 
 				<div class="travel-details">
-					<section id="th-bangkok" class="travel-detail" hidden>
-						<h3>Bangkok</h3>
+					<section id="luang-prabang" class="travel-detail" hidden>
+						<h3>Luang Prabang</h3>
 						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/thailand/bangkok_wat_arun.jpg"
-									alt="The central prang of Wat Arun in Bangkok" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/bangkok_buddha.jpg"
-									alt="A golden Buddha statue inside a Bangkok temple" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/bangkok_boat.jpg"
-									alt="A boat on the Chao Phraya River in Bangkok" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/bangkok_tuktuk.jpg"
-									alt="Riding in a tuk-tuk through Bangkok at night" loading="lazy" /></button>
-						</div>
-						<p>Temples like Wat Arun on the Chao Phraya River, golden Buddhas, river boats, and late-night
-							tuk-tuk rides.</p>
-					</section>
-
-					<section id="th-chiang-mai" class="travel-detail" hidden>
-						<h3>Chiang Mai</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/thailand/chiang_mai_zoo.jpg"
-									alt="Elephants in Chiang Mai" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/thailand.jpg"
-									alt="The ruined brick chedi of Wat Chedi Luang in Chiang Mai"
-									loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/chiang_mai_food.jpg"
-									alt="A bowl of khao soi curry noodle soup in Chiang Mai" loading="lazy" /></button>
-						</div>
-						<p>Northern Thailand's cultural center: the ruined chedi of Wat Chedi Luang, elephants, and the
-							region's signature curry noodle soup, khao soi.</p>
-					</section>
-
-					<section id="th-phuket" class="travel-detail" hidden>
-						<h3>Phuket</h3>
-						<div class="travel-gallery">
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_beach_view.jpg"
-									alt="Sunset over the Andaman Sea from a Phuket beach" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_building.jpg"
-									alt="Colorful neon-lit buildings in Phuket" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_market_naka.jpg"
-									alt="The entrance to Naka Weekend Market in Phuket" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_market_2.jpg"
-									alt="Light displays at a Phuket night market" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_mall_statue.jpg"
-									alt="A multi-armed statue inside a Phuket mall" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_merch.jpg"
-									alt="Hand-painted souvenir boxes for sale in Phuket" loading="lazy" /></button>
-							<button type="button" class="gallery-item"><img src="images/thailand/phuket_pad_krapow.jpg"
-									alt="Pad kra pao with rice and a fried egg in Phuket" loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/thailand/phuket_crocodile_tom_yum_and_gyoza.jpg"
-									alt="Crocodile skewers, tom yum, and gyoza at a Phuket market"
+									src="images/laos/luang-prabang/thumbs/luang_prabang_temple.jpg"
+									data-full="images/laos/luang-prabang/luang_prabang_temple.jpg"
+									alt="Gilded temple facade in Luang Prabang"
+									data-caption="One of Luang Prabang's gold-covered temples."
 									loading="lazy" /></button>
 							<button type="button" class="gallery-item"><img
-									src="images/thailand/phuket_overpriced_crispy_pork.jpg"
-									alt="Crispy pork belly from a Phuket market" loading="lazy" /></button>
+									src="images/laos/luang-prabang/thumbs/luang_prabang_mekong_sunset.jpg"
+									data-full="images/laos/luang-prabang/luang_prabang_mekong_sunset.jpg"
+									alt="Sunset over the Mekong River from a hill in Luang Prabang"
+									data-caption="Sunset over the Mekong." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/laos/luang-prabang/thumbs/luang_prabang_kuang_si_falls.jpg"
+									data-full="images/laos/luang-prabang/luang_prabang_kuang_si_falls.jpg"
+									alt="Turquoise tiered pools at Kuang Si Falls"
+									data-caption="Kuang Si Falls. The water really is that blue."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/laos/luang-prabang/thumbs/luang_prabang_chicken_laap.jpg"
+									data-full="images/laos/luang-prabang/luang_prabang_chicken_laap.jpg"
+									alt="Chicken laap with sticky rice and a Beerlao"
+									data-caption="Chicken laap, sticky rice, and a Beerlao." loading="lazy" /></button>
 						</div>
-						<p>Thailand's largest island, on the Andaman Sea: beach sunsets, Naka Weekend Market, light
-							displays at the night markets, and street food like crocodile skewers and crispy pork.</p>
+						<p>Luang Prabang is a quiet town in northern Laos, full of gold-covered temples. I watched the
+							sun
+							set over the Mekong, visited Kuang Si Falls, where the water really is that turquoise, and
+							ate
+							chicken laap with sticky rice and a Beerlao.</p>
 					</section>
 
+					<section id="vang-vieng" class="travel-detail" hidden>
+						<h3>Vang Vieng</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/laos/vang-vieng/thumbs/vang_vieng_balloons.jpg"
+									data-full="images/laos/vang-vieng/vang_vieng_balloons.jpg"
+									alt="Hot-air balloons over the valley and rice fields of Vang Vieng"
+									data-caption="Hot-air balloons over Vang Vieng." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img src="images/laos/thumbs/laos.jpg"
+									data-full="images/laos/laos.jpg"
+									alt="A hot-air balloon over the karst mountains of Vang Vieng at sunrise"
+									data-caption="Sunrise over the mountains." loading="lazy" /></button>
+						</div>
+						<p>Vang Vieng had some of the most dramatic scenery of the trip. Limestone mountains surround
+							the
+							town, and seeing hot-air balloons rise over the valley and rice fields at sunrise was
+							incredible.</p>
+					</section>
+
+					<section id="don-det" class="travel-detail" hidden>
+						<h3>Don Det</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/laos/don-det/thumbs/don_det_mekong_falls.jpg"
+									data-full="images/laos/don-det/don_det_mekong_falls.jpg"
+									alt="Mekong rapids near Don Det in the 4,000 Islands"
+									data-caption="The Mekong turns into rapids around the 4,000 Islands."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/laos/don-det/thumbs/don_det_noodle_soup.jpg"
+									data-full="images/laos/don-det/don_det_noodle_soup.jpg"
+									alt="Noodle soup with herbs on a table by the Mekong River"
+									data-caption="Noodle soup with a river view." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/laos/don-det/thumbs/don_det_border_crossing.jpg"
+									data-full="images/laos/don-det/don_det_border_crossing.jpg"
+									alt="The Laos border checkpoint at the Cambodia crossing"
+									data-caption="Crossing the border from Cambodia into Laos."
+									loading="lazy" /></button>
+						</div>
+						<p>Don Det was my first stop in Laos after crossing the border from Cambodia. It sits in the
+							4,000
+							Islands region, where the Mekong breaks into rapids and waterfalls. This part of the trip
+							was
+							much more relaxed: noodle soup with a river view and no rush to be anywhere.</p>
+					</section>
+
+				</div>
+			</article>
+
+			<!-- Vietnam -->
+			<article id="vietnam">
+				<h2 class="major">Vietnam</h2>
+				<span class="image main"><img src="images/vietnam/vietnam.jpg"
+						alt="View from the Hang Mua viewpoint over the karst peaks and rice fields of Ninh Binh, Vietnam" /></span>
+				<p>I traveled Vietnam from north to south, from the mountains to the cities and eventually down to the
+					beaches. Every stop felt completely different, but the people, the food, and the atmosphere made the
+					whole country special to me. These are some of the places and moments that stood out along the way.
+				</p>
+
+				<p class="travel-hint"><span class="fas fa-hand-pointer" aria-hidden="true"></span> Tap a place to see
+					its photos.</p>
+				<div class="travel-grid">
+					<button type="button" class="travel-card" data-target="vn-hanoi" aria-expanded="false">
+						<img src="images/vietnam/hanoi/thumbs/hanoi_street_flags.jpg"
+							alt="A Hanoi street strung with red Vietnamese flags" />
+						<span>Hanoi</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-sapa" aria-expanded="false">
+						<img src="images/vietnam/sapa/thumbs/sapa_valley.jpg"
+							alt="Rice terraces and villages in the valley below Sapa" />
+						<span>Sapa</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-ha-giang" aria-expanded="false">
+						<img src="images/vietnam/ha-giang-loop/thumbs/ha_giang_switchbacks.jpg"
+							alt="Motorbikes on the switchback roads of the Ha Giang Loop" />
+						<span>Ha Giang Loop</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-ninh-binh" aria-expanded="false">
+						<img src="images/vietnam/ninh-binh/thumbs/ninh_binh_old_town.jpg"
+							alt="A lantern and pagoda across the water in Ninh Binh" />
+						<span>Ninh Binh</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-phong-nha" aria-expanded="false">
+						<img src="images/vietnam/phong-nha/thumbs/phong_nha_feeding_ducks.jpg"
+							alt="Feeding a huge flock of white ducks" />
+						<span>Phong Nha</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-hue" aria-expanded="false">
+						<img src="images/vietnam/hue/thumbs/hue_perfume_river.jpg"
+							alt="Truong Tien Bridge and a dragon boat on the Perfume River" />
+						<span>Hue</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-hoi-an" aria-expanded="false">
+						<img src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_bai_choi_bingo.jpg"
+							alt="Bai choi folk bingo on a Hoi An street at night" />
+						<span>Hoi An &amp; Da Nang</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-da-lat" aria-expanded="false">
+						<img src="images/vietnam/da-lat/thumbs/da_lat_langbiang.jpg"
+							alt="The Langbiang sign above flowers on a hilltop" />
+						<span>Da Lat</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-hcmc" aria-expanded="false">
+						<img src="images/vietnam/hcmc/thumbs/hcmc_post_office_hall.jpg"
+							alt="The arched main hall of the Saigon Central Post Office" />
+						<span>Ho Chi Minh City</span>
+					</button>
+					<button type="button" class="travel-card" data-target="vn-phu-quoc" aria-expanded="false">
+						<img src="images/vietnam/phu-quoc/thumbs/phu_quoc_canal.jpg"
+							alt="A gondola on a canal lined with colorful buildings" />
+						<span>Phu Quoc</span>
+					</button>
+				</div>
+
+				<div class="travel-details">
+					<section id="vn-hanoi" class="travel-detail" hidden>
+						<h3>Hanoi</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_street_flags.jpg"
+									data-full="images/vietnam/hanoi/hanoi_street_flags.jpg"
+									alt="A Hanoi street strung with red Vietnamese flags"
+									data-caption="Hanoi's streets, covered in red flags." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_street_view.jpg"
+									data-full="images/vietnam/hanoi/hanoi_street_view.jpg"
+									alt="A quiet, tree-lined street in Hanoi"
+									data-caption="A quieter, tree-lined Hanoi street." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_st_josephs_cathedral.jpg"
+									data-full="images/vietnam/hanoi/hanoi_st_josephs_cathedral.jpg"
+									alt="St. Joseph's Cathedral under a gray sky" data-caption="St. Joseph's Cathedral."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_temple_of_literature.jpg"
+									data-full="images/vietnam/hanoi/hanoi_temple_of_literature.jpg"
+									alt="A walled pond lined with red flowers at the Temple of Literature"
+									data-caption="The Temple of Literature." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_war_plane_wreckage.jpg"
+									data-full="images/vietnam/hanoi/hanoi_war_plane_wreckage.jpg"
+									alt="A tower of aircraft wreckage on display at a museum"
+									data-caption="A sculpture made from the wreckage of war planes."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_train_street.jpg"
+									data-full="images/vietnam/hanoi/hanoi_train_street.jpg"
+									alt="Cafes lining the narrow tracks of Hanoi's Train Street at night"
+									data-caption="Train Street: cafes right on the tracks." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_train_street_train.jpg"
+									data-full="images/vietnam/hanoi/hanoi_train_street_train.jpg"
+									alt="A train passing inches from people on Hanoi's Train Street"
+									data-caption="And then the train comes through. Everyone squeezes up against the walls."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_water_puppet_show.jpg"
+									data-full="images/vietnam/hanoi/hanoi_water_puppet_show.jpg"
+									alt="The cast taking a bow at a water puppet show"
+									data-caption="The cast of the water puppet show, a Hanoi tradition."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_football_match.jpg"
+									data-full="images/vietnam/hanoi/hanoi_football_match.jpg"
+									alt="A night football match in a Hanoi stadium"
+									data-caption="Football match: Hanoi vs. HCMC." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_music_cafe.jpg"
+									data-full="images/vietnam/hanoi/hanoi_music_cafe.jpg"
+									alt="Drinks and a board game in a cafe lined with records"
+									data-caption="Montauk by LP Club, a music cafe full of records."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_note_coffee.jpg"
+									data-full="images/vietnam/hanoi/hanoi_note_coffee.jpg"
+									alt="The front of The Note Coffee, covered in sticky notes"
+									data-caption="The Note Coffee, covered floor to ceiling in sticky notes."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_wood_carving.jpg"
+									data-full="images/vietnam/hanoi/hanoi_wood_carving.jpg"
+									alt="A detailed wooden relief carving of a crowded village scene"
+									data-caption="Carved wooden artwork. The detail is unreal."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_train_street_painting.jpg"
+									data-full="images/vietnam/hanoi/hanoi_train_street_painting.jpg"
+									alt="A painting of Hanoi's Train Street on an easel"
+									data-caption="A painting of Train Street for sale on the street."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_memorial_wall.jpg"
+									data-full="images/vietnam/hanoi/hanoi_memorial_wall.jpg"
+									alt="A dark stone wall with relief sculptures of prisoners"
+									data-caption="A memorial wall with relief sculptures." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_sketching.jpg"
+									data-full="images/vietnam/hanoi/hanoi_sketching.jpg"
+									alt="Two people sketching outdoors"
+									data-caption="Someone sketching outside. Art is everywhere in Hanoi."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_pho.jpg"
+									data-full="images/vietnam/hanoi/hanoi_pho.jpg"
+									alt="A bowl of pho with lime and chili on the side"
+									data-caption="Pho from a Michelin-starred restaurant." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_bun_cha.jpg"
+									data-full="images/vietnam/hanoi/hanoi_bun_cha.jpg"
+									alt="Bun cha with grilled pork, noodles, and spring rolls"
+									data-caption="Bun cha, Hanoi's grilled pork and noodle dish."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_banh_mi.jpg"
+									data-full="images/vietnam/hanoi/hanoi_banh_mi.jpg"
+									alt="A banh mi sandwich next to a Coke Zero" data-caption="Banh mi from Banh Mi 25."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_dry_noodles.jpg"
+									data-full="images/vietnam/hanoi/hanoi_dry_noodles.jpg"
+									alt="Dry noodles with beef and small bowls of broth"
+									data-caption="Dry noodles. Really good." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_egg_coffee_donuts.jpg"
+									data-full="images/vietnam/hanoi/hanoi_egg_coffee_donuts.jpg"
+									alt="Egg coffee and a bag of fried donuts"
+									data-caption="Egg coffee, which tastes almost like tiramisu, with street donuts."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_egg_coffee_egg_beer_donuts.jpg"
+									data-full="images/vietnam/hanoi/hanoi_egg_coffee_egg_beer_donuts.jpg"
+									alt="Egg coffee, egg beer, a can of Bia Hanoi, and donuts on a low table"
+									data-caption="Egg coffee, egg beer, and donuts." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_egg_beer.jpg"
+									data-full="images/vietnam/hanoi/hanoi_egg_beer.jpg"
+									alt="Egg coffee, a glass of egg cream, and a can of 333 beer"
+									data-caption="Egg beer tastes great. This is before you pour the beer into the egg cream."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_night_out_dinner.jpg"
+									data-full="images/vietnam/hanoi/hanoi_night_out_dinner.jpg"
+									alt="Shared plates and drinks on a restaurant table at night"
+									data-caption="Dinner on a night out." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hanoi/thumbs/hanoi_mcdonalds.jpg"
+									data-full="images/vietnam/hanoi/hanoi_mcdonalds.jpg"
+									alt="McDonald's spaghetti, fried chicken, and fries"
+									data-caption="McDonald's in Vietnam. Honestly not good: 3/10."
+									loading="lazy" /></button>
+						</div>
+						<p>Hanoi was my first stop in Vietnam, and it set the tone for the whole country. I wandered
+							streets strung with red flags, visited St. Joseph’s Cathedral and the Temple of Literature,
+							watched a water puppet show, caught a Hanoi vs. HCMC football match, and squeezed against
+							the
+							wall as the train rolled down Train Street. The food was the highlight: phở from a
+							Michelin-starred restaurant, bún chả, bánh mì, egg coffee that tastes almost like tiramisu,
+							and
+							even egg beer. The McDonald’s, not so much.</p>
+					</section>
+
+
+					<section id="vn-sapa" class="travel-detail" hidden>
+						<h3>Sapa</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_valley.jpg"
+									data-full="images/vietnam/sapa/sapa_valley.jpg"
+									alt="Rice terraces and villages in the valley below Sapa"
+									data-caption="The valley below Sapa, covered in rice terraces."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_fansipan_summit_me.jpg"
+									data-full="images/vietnam/sapa/sapa_fansipan_summit_me.jpg"
+									alt="Standing by the Fansipan summit marker with a Vietnamese flag"
+									data-caption="Me at the summit of Fansipan, 3,143 m up." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_fansipan_summit.jpg"
+									data-full="images/vietnam/sapa/sapa_fansipan_summit.jpg"
+									alt="The Fansipan summit marker and a Vietnamese flag in thick fog"
+									data-caption="Made it to the top of Fansipan, the &quot;Roof of Indochina.&quot;"
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_fansipan_temple_fog.jpg"
+									data-full="images/vietnam/sapa/sapa_fansipan_temple_fog.jpg"
+									alt="Temple rooftops disappearing into fog on Fansipan"
+									data-caption="The temples on Fansipan, lost in the fog." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_fansipan_statue.jpg"
+									data-full="images/vietnam/sapa/sapa_fansipan_statue.jpg"
+									alt="A large bronze statue in the mist on Fansipan"
+									data-caption="One of the huge statues on Fansipan." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_giant_hand.jpg"
+									data-full="images/vietnam/sapa/sapa_giant_hand.jpg"
+									alt="Sitting on a giant stone hand sculpture in the fog"
+									data-caption="Sitting in a giant hand, somewhere inside the clouds."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_statue.jpg"
+									data-full="images/vietnam/sapa/sapa_statue.jpg"
+									alt="A giant sculpture of a woman's head and hands above a flower garden"
+									data-caption="A giant sculpture in the fog." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_train_station.jpg"
+									data-full="images/vietnam/sapa/sapa_train_station.jpg"
+									alt="A red vintage-style mountain train at the Sapa station"
+									data-caption="The mountain train station in Sapa." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_building.jpg"
+									data-full="images/vietnam/sapa/sapa_building.jpg"
+									alt="A white colonial-style building with orange flowers in front"
+									data-caption="One of Sapa's French-style buildings." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_tower_fog.jpg"
+									data-full="images/vietnam/sapa/sapa_tower_fog.jpg"
+									alt="A tower fading into thick fog" data-caption="Sapa in the fog."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_cat_cat_village.jpg"
+									data-full="images/vietnam/sapa/sapa_cat_cat_village.jpg"
+									alt="Stepping stones across a stream in Cat Cat Village"
+									data-caption="Cat Cat Village." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_cat_cat_village_waterfall.jpg"
+									data-full="images/vietnam/sapa/sapa_cat_cat_village_waterfall.jpg"
+									alt="A waterfall below wooden houses in Cat Cat Village"
+									data-caption="The waterfall in Cat Cat Village." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_cat_cat_village_art.jpg"
+									data-full="images/vietnam/sapa/sapa_cat_cat_village_art.jpg"
+									alt="A ceiling of colorful hanging pots above a tree-root sculpture"
+									data-caption="Art inside Cat Cat Village." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_cat_cat_village_slide.jpg"
+									data-full="images/vietnam/sapa/sapa_cat_cat_village_slide.jpg"
+									alt="A long mosaic-patterned slide running down the mountainside"
+									data-caption="The slide at Cat Cat Village." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_indigo_dye.jpg"
+									data-full="images/vietnam/sapa/sapa_indigo_dye.jpg"
+									alt="A basket vat of natural indigo dye"
+									data-caption="Natural indigo dye, used to color the traditional cloth."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_batik_drawing.jpg"
+									data-full="images/vietnam/sapa/sapa_batik_drawing.jpg"
+									alt="A woman in a bright headscarf drawing a batik pattern on cloth"
+									data-caption="A local woman drawing a batik pattern before the cloth goes into the dye."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_batik_wax_pattern.jpg"
+									data-full="images/vietnam/sapa/sapa_batik_wax_pattern.jpg"
+									alt="Hands drawing a wax pattern on cloth with a metal tool"
+									data-caption="Up close: drawing the pattern by hand." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_cat.jpg"
+									data-full="images/vietnam/sapa/sapa_cat.jpg"
+									alt="A gray cat sitting on a railing above a misty valley"
+									data-caption="This cat had the best view in Sapa." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_lunch_view.jpg"
+									data-full="images/vietnam/sapa/sapa_lunch_view.jpg"
+									alt="Noodle soup and spring rolls with rice terraces in the background"
+									data-caption="Lunch with a view of the terraces." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_horse_meat_sticky_rice.jpg"
+									data-full="images/vietnam/sapa/sapa_horse_meat_sticky_rice.jpg"
+									alt="Horse meat with sticky rice and a plate of fried potatoes"
+									data-caption="Horse meat with sticky rice. I know it sounds weird, but it's actually really good: 8/10."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_bun_cha.jpg"
+									data-full="images/vietnam/sapa/sapa_bun_cha.jpg"
+									alt="Bun cha with grilled pork, noodles, and herbs on a woven tray"
+									data-caption="Bun cha, Sapa style." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_banh_mi.jpg"
+									data-full="images/vietnam/sapa/sapa_banh_mi.jpg"
+									alt="A banh mi next to a can of Coca-Cola" data-caption="Banh mi and a Coke."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_sizzling_chicken.jpg"
+									data-full="images/vietnam/sapa/sapa_sizzling_chicken.jpg"
+									alt="Sizzling chicken with rice, soup, and a latte"
+									data-caption="Sizzling chicken and a latte to warm up." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/sapa/thumbs/sapa_cafe_board_game.jpg"
+									data-full="images/vietnam/sapa/sapa_cafe_board_game.jpg"
+									alt="A board game, a coffee, and a toasted sandwich on a table"
+									data-caption="Coffee, a sandwich, and a board game on a misty day."
+									loading="lazy" /></button>
+						</div>
+						<p>Sapa is a mountain town in the far northwest, and it was wrapped in fog for most of my visit.
+							I
+							rode the mountain train and made it to the top of Fansipan, the highest peak in Indochina at
+							3,143 m, where the temples and statues kept disappearing into the clouds. I also explored
+							Cat
+							Cat Village, watched local women draw batik patterns before dyeing the cloth with natural
+							indigo, and tried horse meat with sticky rice, which was honestly really good.</p>
+					</section>
+
+					<section id="vn-ha-giang" class="travel-detail" hidden>
+						<h3>Ha Giang Loop</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_switchbacks.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_switchbacks.jpg"
+									alt="Motorbikes on the switchback roads of the Ha Giang Loop"
+									data-caption="The famous switchbacks of the Ha Giang Loop."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_flag_lookout.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_flag_lookout.jpg"
+									alt="Looking out over the mountains next to a Vietnamese flag"
+									data-caption="Taking in the view at one of the lookouts." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_valley.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_valley.jpg"
+									alt="A deep valley between steep mountains under cloud"
+									data-caption="Valleys like this around every corner." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_river_haze.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_river_haze.jpg"
+									alt="A river winding through a hazy canyon"
+									data-caption="The river far below, through the haze." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_mountain_road.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_mountain_road.jpg"
+									alt="A motorbike on a narrow road along the mountainside"
+									data-caption="On the road." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_winding_road.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_winding_road.jpg"
+									alt="A road winding over dry hills"
+									data-caption="Winding roads up and over the hills." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_cloudy_valley.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_cloudy_valley.jpg"
+									alt="A wide valley under heavy cloud" data-caption="Clouds rolling over the valley."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_flag_mountains.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_flag_mountains.jpg"
+									alt="A Vietnamese flag on a hilltop above the mountains"
+									data-caption="A flag flying over the mountains." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_motorbike_load.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_motorbike_load.jpg"
+									alt="A motorbike carrying a giant bundle of dried corn stalks"
+									data-caption="How much can you fit on one motorbike? This much."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_group_stop.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_group_stop.jpg"
+									alt="The tour group taking a break on a mountain road"
+									data-caption="A quick break with the group." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_tour_family.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_tour_family.jpg"
+									alt="The tour group posing with a Vietnamese flag and mountains behind them"
+									data-caption="The Ha Giang tour fam." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_family_dinner.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_family_dinner.jpg"
+									alt="A table covered with shared dishes on a patterned cloth"
+									data-caption="Family-style dinner on the loop." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ha-giang-loop/thumbs/ha_giang_family_dinner_2.jpg"
+									data-full="images/vietnam/ha-giang-loop/ha_giang_family_dinner_2.jpg"
+									alt="A big tray of shared dishes surrounded by side plates"
+									data-caption="Another big shared meal. They fed us well." loading="lazy" /></button>
+						</div>
+						<p>The Ha Giang Loop is a multi-day motorbike trip through the mountains near the Chinese
+							border,
+							on switchback roads like the one in this site’s background. Every turn opened up another
+							valley.
+							Along the way I saw motorbikes carrying unbelievable loads, stopped at lookouts marked with
+							Vietnamese flags, and shared big family-style dinners with the group, who quickly became my
+							Ha
+							Giang tour fam.</p>
+					</section>
+
+					<section id="vn-ninh-binh" class="travel-detail" hidden>
+						<h3>Ninh Binh</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img src="images/vietnam/thumbs/vietnam.jpg"
+									data-full="images/vietnam/vietnam.jpg"
+									alt="The view from Hang Mua over karst peaks and rice fields"
+									data-caption="The view from Hang Mua. Worth every one of the stairs."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_hang_mua_view.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_hang_mua_view.jpg"
+									alt="Karst peaks and rice fields seen from a mountaintop"
+									data-caption="Looking out over Ninh Binh from the top." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_rice_fields.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_rice_fields.jpg"
+									alt="Flooded rice fields below the karst peaks"
+									data-caption="Rice fields from above." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_river_valley.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_river_valley.jpg"
+									alt="A river winding through rice fields between karst mountains"
+									data-caption="The river winding between the mountains." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_boat_ride.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_boat_ride.jpg"
+									alt="A conical hat on the bow of a boat on a green river"
+									data-caption="On the boat ride through the karsts." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_rowers.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_rowers.jpg"
+									alt="Rowers in conical hats on the river between karst mountains"
+									data-caption="Rowers on the river." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_cave_boat.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_cave_boat.jpg"
+									alt="Boats passing through a dark, low cave"
+									data-caption="Going through one of the caves by boat. Watch your head."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_cave_exit.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_cave_exit.jpg"
+									alt="Looking out of a cave mouth onto green water and cliffs"
+									data-caption="Coming out of the cave." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_old_town.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_old_town.jpg"
+									alt="A lantern and pagoda across the water in Ninh Binh"
+									data-caption="Ninh Binh Old Town." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_old_town_boats.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_old_town_boats.jpg"
+									alt="Boats on a lantern-decorated pond, seen through pink flowers"
+									data-caption="Boats in the old town." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_mountain_goat.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_mountain_goat.jpg"
+									alt="Sizzling goat with dipping sauces, herbs, and a beer"
+									data-caption="Mountain goat, a Ninh Binh specialty." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_pig_ear_chicken.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_pig_ear_chicken.jpg"
+									alt="Sliced pig ear with herbs and a plate of grilled chicken"
+									data-caption="Pig ear and chicken." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/ninh-binh/thumbs/ninh_binh_banana_waffle.jpg"
+									data-full="images/vietnam/ninh-binh/ninh_binh_banana_waffle.jpg"
+									alt="A bubble waffle topped with banana and chocolate"
+									data-caption="Banana chocolate waffle for dessert." loading="lazy" /></button>
+						</div>
+						<p>Ninh Binh is known as “Ha Long Bay on land”: limestone karsts rising out of rice fields and
+							rivers. I climbed to the top of Hang Mua for the view, took a boat ride along the river and
+							through low caves, and explored the lantern-lit old town. For food, I tried the local
+							specialty,
+							mountain goat, plus pig ear and a banana chocolate waffle for dessert.</p>
+					</section>
+
+					<section id="vn-phong-nha" class="travel-detail" hidden>
+						<h3>Phong Nha</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phong-nha/thumbs/phong_nha_feeding_ducks.jpg"
+									data-full="images/vietnam/phong-nha/phong_nha_feeding_ducks.jpg"
+									alt="Feeding a huge flock of white ducks"
+									data-caption="Feeding the ducks in Phong Nha." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phong-nha/thumbs/phong_nha_paradise_cave.jpg"
+									data-full="images/vietnam/phong-nha/phong_nha_paradise_cave.jpg"
+									alt="Huge rock formations inside Paradise Cave"
+									data-caption="Paradise Cave. Photos can't show how huge it is."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phong-nha/thumbs/phong_nha_river_view.jpg"
+									data-full="images/vietnam/phong-nha/phong_nha_river_view.jpg"
+									alt="A river with jungle-covered mountains behind it"
+									data-caption="The river and mountains around Phong Nha." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phong-nha/thumbs/phong_nha_noodle_soup.jpg"
+									data-full="images/vietnam/phong-nha/phong_nha_noodle_soup.jpg"
+									alt="Noodle soup with herbs, an iced tea, and a Coke"
+									data-caption="Lunch in Phong Nha." loading="lazy" /></button>
+						</div>
+						<p>Phong Nha is home to some of the largest caves in the world. I explored Paradise Cave, which
+							is
+							far bigger than any photo can show, took in the river and jungle-covered mountains, and fed
+							a
+							very enthusiastic flock of ducks.</p>
+					</section>
+
+					<section id="vn-hue" class="travel-detail" hidden>
+						<h3>Hue</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_perfume_river.jpg"
+									data-full="images/vietnam/hue/hue_perfume_river.jpg"
+									alt="Truong Tien Bridge and a dragon boat on the Perfume River"
+									data-caption="Truong Tien Bridge and a dragon boat on the Perfume River."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_flag_tower.jpg"
+									data-full="images/vietnam/hue/hue_flag_tower.jpg"
+									alt="The Flag Tower of the Hue Citadel under a clear sky"
+									data-caption="The Flag Tower at the Citadel." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_imperial_city_gate.jpg"
+									data-full="images/vietnam/hue/hue_imperial_city_gate.jpg"
+									alt="A large gate building with the sun shining behind it"
+									data-caption="A gate at the Imperial City." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_imperial_city_bridge.jpg"
+									data-full="images/vietnam/hue/hue_imperial_city_bridge.jpg"
+									alt="A small stone bridge over a pond" data-caption="A bridge at the Imperial City."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_water_park_dragon.jpg"
+									data-full="images/vietnam/hue/hue_water_park_dragon.jpg"
+									alt="Posing in front of a giant dragon statue at an abandoned water park"
+									data-caption="Me and the dragon at Hue's abandoned water park."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_water_park_lake.jpg"
+									data-full="images/vietnam/hue/hue_water_park_lake.jpg"
+									alt="The abandoned dragon building reflected in a lake"
+									data-caption="The dragon from across the lake." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_water_park_dragon_mouth.jpg"
+									data-full="images/vietnam/hue/hue_water_park_dragon_mouth.jpg"
+									alt="Looking out at the lake from inside the dragon's graffiti-covered mouth"
+									data-caption="The view from inside the dragon's mouth." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_water_park_inside.jpg"
+									data-full="images/vietnam/hue/hue_water_park_inside.jpg"
+									alt="A graffiti-covered room inside the abandoned water park"
+									data-caption="Graffiti everywhere inside." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_water_park_art.jpg"
+									data-full="images/vietnam/hue/hue_water_park_art.jpg"
+									alt="A large graffiti portrait of a woman on a curved wall"
+									data-caption="Some of the art inside the water park." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_motorbike_tv.jpg"
+									data-full="images/vietnam/hue/hue_motorbike_tv.jpg"
+									alt="Riding behind a motorbike that is carrying a TV"
+									data-caption="Someone carrying a TV on a motorbike. Totally normal here."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_salad.jpg"
+									data-full="images/vietnam/hue/hue_salad.jpg"
+									alt="A colorful salad with beans, egg, and vegetables"
+									data-caption="One of the best salads I've ever had." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_chicken_salad.jpg"
+									data-full="images/vietnam/hue/hue_chicken_salad.jpg"
+									alt="A chicken salad bowl with dressing and a cola" data-caption="Lunch in Hue."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hue/thumbs/hue_drinks.jpg"
+									data-full="images/vietnam/hue/hue_drinks.jpg"
+									alt="Three iced drinks on a cafe table" data-caption="Cafe drinks in Hue."
+									loading="lazy" /></button>
+						</div>
+						<p>Hue was Vietnam’s imperial capital, on the Perfume River. I visited the Citadel and the
+							Imperial
+							City, saw Truong Tien Bridge at sunset, and explored the abandoned Thuy Tien water park
+							outside
+							the city, where a giant graffiti-covered dragon sits in the middle of a lake. You can even
+							climb
+							up and look out from inside its mouth. Hue also had one of the best salads I’ve ever had.
+						</p>
+					</section>
+
+					<section id="vn-hoi-an" class="travel-detail" hidden>
+						<h3>Hoi An &amp; Da Nang</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_bai_choi_bingo.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_bai_choi_bingo.jpg"
+									alt="Bai choi folk bingo on a Hoi An street at night"
+									data-caption="Bai choi: folk bingo with singing, on the street at night."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_lantern_boats.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_lantern_boats.jpg"
+									alt="Lantern boats on the river at night"
+									data-caption="Lantern boats on the river at night." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_lantern_making.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_lantern_making.jpg"
+									alt="A bamboo lantern frame and painted silk on a work table"
+									data-caption="Making my own lantern." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_cooking_class.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_cooking_class.jpg"
+									alt="Beef salad served in woven baskets at a cooking class"
+									data-caption="What we made at the cooking class." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_coffee_class.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_coffee_class.jpg"
+									alt="Coffee-making tools, eggs, and a hand mixer on a table"
+									data-caption="Setting up for the coffee-making class." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_coffee_map.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_coffee_map.jpg"
+									alt="A map of where coffee is grown in Vietnam, on an easel"
+									data-caption="Learning where Vietnam's coffee is grown." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_egg_coffee_i_made.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_egg_coffee_i_made.jpg"
+									alt="An egg coffee in a cup on a warming stand"
+									data-caption="Egg coffee I made in the class." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_coconut_coffee_i_made.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_coconut_coffee_i_made.jpg"
+									alt="A layered coconut coffee in a glass"
+									data-caption="Coconut coffee, also made by me." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_noodles.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_noodles.jpg"
+									alt="Noodles with herbs, sauces, and side dishes"
+									data-caption="Noodles with all the sides." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_rice_bowls.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_rice_bowls.jpg"
+									alt="Rice bowls with omelette, salad, and grilled meat"
+									data-caption="Rice bowls for the table." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_drinks.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_drinks.jpg"
+									alt="A bag of beers and a bottle of strawberry soju"
+									data-caption="Supplies for the night." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hoi-an-da-nang/thumbs/hoi_an_cocktails.jpg"
+									data-full="images/vietnam/hoi-an-da-nang/hoi_an_cocktails.jpg"
+									alt="Two cocktails in a dark bar with neon signs"
+									data-caption="Cocktails at a neon bar." loading="lazy" /></button>
+						</div>
+						<p>Hoi An’s old town is a UNESCO World Heritage Site about 30 km from the beach city of Da Nang.
+							At
+							night the river fills with lantern boats and people play bài chòi, a kind of folk bingo with
+							singing. I made my own lantern, took a cooking class, and took a coffee class where I made
+							egg
+							coffee and coconut coffee myself.</p>
+					</section>
+
+					<section id="vn-da-lat" class="travel-detail" hidden>
+						<h3>Da Lat</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_langbiang.jpg"
+									data-full="images/vietnam/da-lat/da_lat_langbiang.jpg"
+									alt="The Langbiang sign above flowers on a hilltop"
+									data-caption="Langbiang, the mountain above Da Lat." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_crazy_house_1.jpg"
+									data-full="images/vietnam/da-lat/da_lat_crazy_house_1.jpg"
+									alt="A dragon and pegasus sculpture above a rose garden"
+									data-caption="Crazy House. It's exactly what it sounds like."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_crazy_house_2.jpg"
+									data-full="images/vietnam/da-lat/da_lat_crazy_house_2.jpg"
+									alt="Twisting, tree-like buildings and walkways at Crazy House"
+									data-caption="Walkways twisting all over the buildings." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_crazy_house_3.jpg"
+									data-full="images/vietnam/da-lat/da_lat_crazy_house_3.jpg"
+									alt="A narrow staircase winding up a cave-like structure"
+									data-caption="More Crazy House. Stairs everywhere." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_alpine_coaster.jpg"
+									data-full="images/vietnam/da-lat/da_lat_alpine_coaster.jpg"
+									alt="An alpine coaster track through a pine forest"
+									data-caption="The alpine coaster through the pine forest."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_go_karts.jpg"
+									data-full="images/vietnam/da-lat/da_lat_go_karts.jpg"
+									alt="People sitting in colorful go-karts"
+									data-caption="Basically real-life Mario Kart." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_art_tree_roots.jpg"
+									data-full="images/vietnam/da-lat/da_lat_art_tree_roots.jpg"
+									alt="A sculpture of twisted tree roots over a stream"
+									data-caption="Some of the art around Da Lat." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_art_cassettes.jpg"
+									data-full="images/vietnam/da-lat/da_lat_art_cassettes.jpg"
+									alt="A wall sculpture of giant cassette tapes and a reel-to-reel"
+									data-caption="Giant cassette tapes." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_art_faces.jpg"
+									data-full="images/vietnam/da-lat/da_lat_art_faces.jpg"
+									alt="Two face sculptures with plant hair facing each other across a pond"
+									data-caption="Two faces in the garden." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_art_forest_spirit.jpg"
+									data-full="images/vietnam/da-lat/da_lat_art_forest_spirit.jpg"
+									alt="A carved tree-spirit sculpture labeled Than Rung"
+									data-caption="Than Rung, the forest spirit." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_statue.jpg"
+									data-full="images/vietnam/da-lat/da_lat_statue.jpg"
+									alt="A bronze statue of a man in a suit beside a rock waterfall"
+									data-caption="A statue in Da Lat." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_night_market.jpg"
+									data-full="images/vietnam/da-lat/da_lat_night_market.jpg"
+									alt="Crowds at the Da Lat night market in front of the central market building"
+									data-caption="The night market." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_street_food.jpg"
+									data-full="images/vietnam/da-lat/da_lat_street_food.jpg"
+									alt="A cup of mixed noodles held over the sidewalk"
+									data-caption="Street food in a cup." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_vietnamese_pizza.jpg"
+									data-full="images/vietnam/da-lat/da_lat_vietnamese_pizza.jpg"
+									alt="Banh trang nuong cooking on a grill"
+									data-caption="Vietnamese pizza (banh trang nuong), a Da Lat specialty."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_coffee.jpg"
+									data-full="images/vietnam/da-lat/da_lat_coffee.jpg"
+									alt="Two iced coffees and cigarettes on a ledge above the street"
+									data-caption="Coffee with a street view." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/da-lat/thumbs/da_lat_sleeper_bus.jpg"
+									data-full="images/vietnam/da-lat/da_lat_sleeper_bus.jpg"
+									alt="A sleeper bus pod with a screen and a blanket"
+									data-caption="How I got around: the sleeper bus." loading="lazy" /></button>
+						</div>
+						<p>Da Lat is a cool highland city surrounded by pine forests. I rode the alpine coaster through
+							the
+							trees, raced go-karts that felt like real-life Mario Kart, climbed the twisting stairs of
+							Crazy
+							House, and found art everywhere, from giant cassette tapes to the forest spirit Thần Rừng.
+							In
+							the evenings I went to the night market for street food and bánh tráng nướng, often called
+							“Vietnamese pizza.”</p>
+					</section>
+
+					<section id="vn-hcmc" class="travel-detail" hidden>
+						<h3>Ho Chi Minh City</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_post_office_hall.jpg"
+									data-full="images/vietnam/hcmc/hcmc_post_office_hall.jpg"
+									alt="The arched main hall of the Saigon Central Post Office"
+									data-caption="Saigon Central Post Office." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_post_office_map.jpg"
+									data-full="images/vietnam/hcmc/hcmc_post_office_map.jpg"
+									alt="An old painted map in an arch above a row of clocks"
+									data-caption="The old map painted inside the post office."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_bridge.jpg"
+									data-full="images/vietnam/hcmc/hcmc_bridge.jpg"
+									alt="A cable-stayed bridge lit purple at night"
+									data-caption="One of the bridges lit up at night." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_bui_vien_street.jpg"
+									data-full="images/vietnam/hcmc/hcmc_bui_vien_street.jpg"
+									alt="Crowds and neon signs on Bui Vien Street at night"
+									data-caption="Bui Vien, the walking street. Loud all night."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_night_alley.jpg"
+									data-full="images/vietnam/hcmc/hcmc_night_alley.jpg"
+									alt="An alley hung with paper lanterns at night" data-caption="A lantern-lit alley."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_war_remnants_museum.jpg"
+									data-full="images/vietnam/hcmc/hcmc_war_remnants_museum.jpg"
+									alt="A tank and a helicopter on display outside the War Remnants Museum"
+									data-caption="The War Remnants Museum." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_cu_chi_tunnels_diorama.jpg"
+									data-full="images/vietnam/hcmc/hcmc_cu_chi_tunnels_diorama.jpg"
+									alt="A diorama showing the layout of the Cu Chi tunnels"
+									data-caption="A model of the Cu Chi tunnel network." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_cu_chi_tunnels_traps.jpg"
+									data-full="images/vietnam/hcmc/hcmc_cu_chi_tunnels_traps.jpg"
+									alt="Pit traps on display with a jungle mural behind them"
+									data-caption="Some of the traps used at Cu Chi." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_cu_chi_tunnel_entrance.jpg"
+									data-full="images/vietnam/hcmc/hcmc_cu_chi_tunnel_entrance.jpg"
+									alt="Squeezing into a hidden tunnel entrance in the leaves"
+									data-caption="Squeezing into one of the tunnel entrances."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_com_tam.jpg"
+									data-full="images/vietnam/hcmc/hcmc_com_tam.jpg"
+									alt="Broken rice with a pork chop and a fried egg"
+									data-caption="Com tam (broken rice) with pork and egg." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_4ps_pizza.jpg"
+									data-full="images/vietnam/hcmc/hcmc_4ps_pizza.jpg"
+									alt="Pizza and a beer at Pizza 4P's" data-caption="Pizza at 4P's."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/hcmc/thumbs/hcmc_donut_shop.jpg"
+									data-full="images/vietnam/hcmc/hcmc_donut_shop.jpg"
+									alt="A neon-lit donut shop at night" data-caption="Late-night donut run."
+									loading="lazy" /></button>
+						</div>
+						<p>Ho Chi Minh City, formerly Saigon, is Vietnam’s largest city. I visited the Central Post
+							Office
+							and the War Remnants Museum, then went out to the Cu Chi tunnels, where I squeezed into one
+							of
+							the tunnel entrances. At night it was all neon: bridges lit up, lantern-lit alleys, and Bui
+							Vien
+							walking street. I ate cơm tấm (broken rice) and pizza at 4P’s.</p>
+					</section>
+
+					<section id="vn-phu-quoc" class="travel-detail" hidden>
+						<h3>Phu Quoc</h3>
+						<div class="travel-gallery">
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_canal.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_canal.jpg"
+									alt="A gondola on a canal lined with colorful buildings"
+									data-caption="Grand World's Venice-style canal." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_grand_world.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_grand_world.jpg"
+									alt="Pastel buildings along a canal at Grand World"
+									data-caption="Grand World during the day." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_clock_tower_night.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_clock_tower_night.jpg"
+									alt="A red clock tower and lit-up buildings at night"
+									data-caption="Grand World at night." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_street.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_street.jpg"
+									alt="A street lined with trees and string lights at dusk"
+									data-caption="An evening walk." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_starfish_beach.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_starfish_beach.jpg"
+									alt="A starfish on the sand at sunset" data-caption="Starfish Beach at sunset."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_cafe.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_cafe.jpg"
+									alt="A cafe with tall windows looking out on colorful buildings"
+									data-caption="A cafe with a view." loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_seafood_pho.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_seafood_pho.jpg"
+									alt="A bowl of seafood pho" data-caption="Seafood pho, island style."
+									loading="lazy" /></button>
+							<button type="button" class="gallery-item"><img
+									src="images/vietnam/phu-quoc/thumbs/phu_quoc_b52_shots.jpg"
+									data-full="images/vietnam/phu-quoc/phu_quoc_b52_shots.jpg"
+									alt="Three flaming B-52 shots" data-caption="B-52 shots. On fire, literally."
+									loading="lazy" /></button>
+						</div>
+						<p>Phu Quoc is an island off Vietnam’s southwest coast. I spent my time between Grand World,
+							with
+							its Venice-style canals and a clock tower that lights up at night, and Starfish Beach at
+							sunset.
+							Add cozy cafes, seafood phở, and flaming B-52 shots, and it was a great island break.</p>
+					</section>
 				</div>
 			</article>
 
@@ -571,7 +1554,7 @@
 						<span>The Soup Surprise</span>
 					</button>
 					<button type="button" class="travel-card" data-target="ww-meal" aria-expanded="false">
-						<img src="images/unfortunate_events/cambodian_meal.jpg" alt="A takeaway meal in Cambodia" />
+						<img src="images/unfortunate_events/cambodia_takeaway_meal.jpg" alt="A takeaway meal in Cambodia" />
 						<span>The Cambodian Meal</span>
 					</button>
 				</div>
@@ -597,10 +1580,10 @@
 
 				<div class="about-intro">
 					<img src="images/about/christopher.jpg" alt="Christopher Carpio in Sapa, Vietnam" />
-					<p>Hi, I'm Christopher. I've spent the last 7+ years working in IT, with the last few focused heavily
-						on systems and infrastructure. I'm now moving into cloud engineering and have earned
-						certifications in AWS and Terraform along the way. Carpio Travel is one of the projects I'm
-						building to put those skills into practice while also sharing something I genuinely love:
+					<p>Hi, I’m Christopher. I’ve spent the last 7+ years working in IT, with the last few focused
+						heavily on systems and infrastructure. I’m now transitioning into cloud engineering and have
+						earned certifications in AWS and Terraform along the way. Carpio Travel is one of the projects
+						I’m building to put those skills into practice while also sharing something I genuinely love:
 						traveling.</p>
 				</div>
 
@@ -611,6 +1594,10 @@
 						publicly accessible.</li>
 					<li><strong>Amazon CloudFront:</strong> delivers the site globally through AWS edge locations
 						over HTTPS.</li>
+					<li><strong>Amazon Route 53:</strong> hosts DNS for carpiotravel.com, with alias records
+						pointing the domain and www at CloudFront.</li>
+					<li><strong>AWS Certificate Manager:</strong> provides the TLS certificate for HTTPS,
+						validated through DNS so it renews automatically.</li>
 					<li><strong>Origin Access Control:</strong> allows CloudFront to securely access the private S3
 						bucket.</li>
 					<li><strong>Terraform:</strong> provisions and manages the AWS infrastructure as code.</li>
@@ -622,6 +1609,8 @@
 				<ul class="icons">
 					<li><a href="https://github.com/ccarpio-tech" class="icon brands fa-github"><span
 								class="label">GitHub</span></a></li>
+					<li><a href="https://www.linkedin.com/in/christopher-carpio" class="icon brands fa-linkedin-in"><span
+								class="label">LinkedIn</span></a></li>
 				</ul>
 			</article>
 
@@ -630,7 +1619,7 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">&copy; Carpio Travel. Design: <a href="https://html5up.net">HTML5 UP</a>. Hosted on AWS
-				S3 + CloudFront, provisioned with Terraform.</p>
+				S3 + CloudFront, with DNS on Route 53 and HTTPS from ACM, provisioned with Terraform.</p>
 		</footer>
 
 	</div>

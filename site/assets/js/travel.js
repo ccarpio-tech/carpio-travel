@@ -5,6 +5,21 @@
 const travelCards = document.querySelectorAll(".travel-card");
 const travelDetails = document.querySelectorAll(".travel-detail");
 
+// Add "View N photos" under each card's name so it's clear the card opens a
+// gallery. The count comes from the gallery, so it stays right as photos change.
+travelCards.forEach((card) => {
+	const detail = document.getElementById(card.dataset.target);
+	const count = detail ? detail.querySelectorAll(".gallery-item").length : 0;
+	const label = card.querySelector("span");
+	if (!count || !label) return;
+
+	const hint = document.createElement("small");
+	hint.className = "travel-card-count";
+	hint.innerHTML = '<i class="fas fa-camera" aria-hidden="true"></i> ';
+	hint.append(`View ${count} photo${count === 1 ? "" : "s"}`);
+	label.appendChild(hint);
+});
+
 travelCards.forEach((card) => {
 
 	card.addEventListener("click", () => {
@@ -53,10 +68,12 @@ function closeLightbox() {
 document.querySelectorAll(".gallery-item").forEach((item) => {
 
 	item.addEventListener("click", () => {
+		// The grid shows a small thumbnail; the viewer loads the full-size photo
+		// (data-full) and shows the caption (data-caption) when they exist.
 		const img = item.querySelector("img");
-		lightboxImg.src = img.src;
+		lightboxImg.src = img.dataset.full || img.src;
 		lightboxImg.alt = img.alt;
-		lightboxCaption.textContent = img.alt;
+		lightboxCaption.textContent = img.dataset.caption || img.alt;
 		lightbox.hidden = false;
 	});
 

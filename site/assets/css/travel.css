@@ -71,6 +71,38 @@
 	text-transform: uppercase;
 }
 
+/* "View N photos" line under the card name (added by travel.js). */
+.travel-card-count {
+	display: block;
+	margin-top: 0.25rem;
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+	text-transform: none;
+	opacity: 0.85;
+}
+
+.travel-card-count i {
+	margin-right: 0.35rem;
+}
+
+.travel-card:hover .travel-card-count,
+.travel-card:focus-visible .travel-card-count {
+	opacity: 1;
+	text-decoration: underline;
+}
+
+/* "Tap a place to see its photos." line above each card grid. */
+.travel-hint {
+	margin: 2rem 0 -1rem 0;
+	font-size: 0.9rem;
+	opacity: 0.8;
+}
+
+.travel-hint .fas {
+	margin-right: 0.35rem;
+}
+
 /* ---- Detail panels shown when a card is clicked ---- */
 
 .travel-detail {
