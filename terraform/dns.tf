@@ -21,4 +21,26 @@ resource "aws_route53_zone" "main" {
     # Deleting this zone would break the domain's NS delegation.
     prevent_destroy = true
   }
-} 
+}
+
+# ------------------------------------------------------------------------------
+# ACM certificate for the custom domain (validated via DNS in Route 53)
+# ------------------------------------------------------------------------------
+
+resource "aws_acm_certificate" "site" {
+  # CloudFront only accepts certificates from us-east-1, regardless of the
+  # provider's default region.
+  region = "us-east-1"
+
+  domain_name               = var.domain_name
+  subject_alternative_names = ["www.${var.domain_name}"]
+
+  # Prove ownership with a CNAME record; ACM auto-renews while it stays in place.
+  validation_method = "DNS"
+
+  lifecycle {
+    # A replacement cert must exist before the old one (attached to CloudFront)
+    # can be deleted.
+    create_before_destroy = true
+  }
+}
