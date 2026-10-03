@@ -76,6 +76,9 @@ resource "aws_cloudfront_distribution" "site" {
   default_root_object = "index.html"
   price_class         = "PriceClass_100" # North America + Europe edges only
 
+  # Custom domains CloudFront will answer for; each must be on the ACM cert.
+  aliases = [var.domain_name, "www.${var.domain_name}"]
+
   origin {
     # REST endpoint (not the S3 website endpoint), required for OAC.
     domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
@@ -98,9 +101,12 @@ resource "aws_cloudfront_distribution" "site" {
     }
   }
 
-  # Default *.cloudfront.net certificate for now; replaced by ACM in V2.
   viewer_certificate {
-    cloudfront_default_certificate = true
+    # Reference the validation waiter (not the cert) so CloudFront only ever
+    # gets an ISSUED certificate.
+    acm_certificate_arn      = aws_acm_certificate_validation.site.certificate_arn
+    ssl_support_method       = "sni-only"     # free; "vip" is $600/month
+    minimum_protocol_version = "TLSv1.2_2021" # no TLS 1.0/1.1
   }
 }
 
