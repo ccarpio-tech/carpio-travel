@@ -9,3 +9,9 @@ variable "project_name" {
   type        = string
   default     = "carpio-travel"
 }
+
+variable "domain_name" {
+  description = "Apex domain registered in Route 53"
+  type        = string
+  default     = "carpiotravel.com"
+}
