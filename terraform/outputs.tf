@@ -19,6 +19,6 @@ output "cloudfront_domain_name" {
 }
 
 output "site_url" {
-  description = "URL of the site via CloudFront"
-  value       = "https://${aws_cloudfront_distribution.site.domain_name}"
+  description = "Public URL of the site (HTTPS)"
+  value       = "https://${var.domain_name}"
 }
