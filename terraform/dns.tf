@@ -44,3 +44,37 @@ resource "aws_acm_certificate" "site" {
     create_before_destroy = true
   }
 }
+
+# ------------------------------------------------------------------------------
+# DNS validation: publish ACM's CNAMEs, then wait for the cert to be issued
+# ------------------------------------------------------------------------------
+
+# One CNAME per name on the cert, keyed by domain name. The keys come from
+# config so they are known at plan time; the values come from ACM.
+resource "aws_route53_record" "cert_validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.site.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      type   = dvo.resource_record_type
+      record = dvo.resource_record_value
+    }
+  }
+
+  zone_id = aws_route53_zone.main.zone_id
+  name    = each.value.name
+  type    = each.value.type
+  records = [each.value.record]
+  ttl     = 60
+
+  # Take over an identical record if one was already created outside Terraform.
+  allow_overwrite = true
+}
+
+# Not an AWS object: blocks until ACM reports the cert as ISSUED. CloudFront
+# references this resource so it never gets a pending cert.
+resource "aws_acm_certificate_validation" "site" {
+  region = "us-east-1"
+
+  certificate_arn         = aws_acm_certificate.site.arn
+  validation_record_fqdns = [for record in aws_route53_record.cert_validation : record.fqdn]
+}
