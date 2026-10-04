@@ -22,3 +22,8 @@ output "site_url" {
   description = "Public URL of the site (HTTPS)"
   value       = "https://${var.domain_name}"
 }
+
+output "github_oidc_provider_arn" {
+  description = "ARN of the GitHub OIDC provider"
+  value       = aws_iam_openid_connect_provider.github.arn
+}
