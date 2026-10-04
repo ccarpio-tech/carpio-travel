@@ -15,3 +15,15 @@ variable "domain_name" {
   type        = string
   default     = "carpiotravel.com"
 }
+
+variable "github_repo" {
+  description = "GitHub repository name (owner/repo)"
+  type        = string
+  default     = "ccarpio-tech/carpio-travel"
+}
+
+variable "github_branch" {
+  description = "GitHub branch name"
+  type        = string
+  default     = "main"
+}
