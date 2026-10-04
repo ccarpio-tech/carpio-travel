@@ -8,6 +8,28 @@
 	width: 52rem;
 }
 
+/* ---- Intro: spin the globe logo once when the page loads ---- */
+
+/* Spins around its vertical axis like a real globe. The template's
+   is-preload class pauses all animations until the page is ready, so this
+   starts together with the header fade-in. */
+#header .logo .icon {
+	display: inline-block;
+	animation: globe-spin 1.6s ease-in-out 0.4s 1 both;
+}
+
+@keyframes globe-spin {
+	from { transform: rotateY(0deg); }
+	to   { transform: rotateY(720deg); }
+}
+
+/* Skip the spin for visitors who have asked their device to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+	#header .logo .icon {
+		animation: none;
+	}
+}
+
 /* ---- Destination card grid ---- */
 
 .travel-grid {
