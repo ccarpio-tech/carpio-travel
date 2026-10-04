@@ -30,3 +30,28 @@ resource "aws_iam_role" "github" {
   assume_role_policy = data.aws_iam_policy_document.github_trust.json
 }
 
+data "aws_iam_policy_document" "github_deploy" {
+
+  statement {
+    actions   = ["s3:PutObject", "s3:DeleteObject"]
+    resources = ["${aws_s3_bucket.site.arn}/*"]
+    sid       = "S3Deploy"
+  }
+
+  statement {
+    actions   = ["cloudfront:CreateInvalidation"]
+    resources = [aws_cloudfront_distribution.site.arn]
+    sid       = "CloudFrontInvalidation"
+  }
+  statement {
+    actions   = ["s3:ListBucket"]
+    resources = [aws_s3_bucket.site.arn]
+    sid       = "S3ListBucket"
+  }
+}
+
+resource "aws_iam_role_policy" "github_deploy" {
+  name   = "${var.project_name}-github-deploy"
+  policy = data.aws_iam_policy_document.github_deploy.json
+  role   = aws_iam_role.github.id
+}
