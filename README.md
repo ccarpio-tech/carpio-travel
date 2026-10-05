@@ -27,24 +27,30 @@ AWS · Terraform · GitHub Actions · S3 · CloudFront · Route 53 · ACM · IAM
 ```mermaid
 flowchart TB
     visitor["Visitor"]
-    r53["Route 53<br/>DNS for carpiotravel.com"]
-    cf["CloudFront<br/>HTTPS with ACM certificate"]
-    s3[("S3 bucket<br/>private")]
-
     dev["git push to main"]
-    gha["GitHub Actions"]
-    iam["IAM role<br/>trusted via OIDC"]
+
+    subgraph github["GitHub"]
+        gha["GitHub Actions"]
+    end
+
+    subgraph aws["AWS"]
+        r53["Route 53<br/>DNS for carpiotravel.com"]
+        cf["CloudFront<br/>HTTPS with ACM certificate"]
+        s3[("S3 bucket<br/>private")]
+        iam["IAM role<br/>trusted via OIDC"]
+    end
 
     visitor -- "1. DNS lookup" --> r53
     visitor -- "2. HTTPS request" --> cf
     cf -- "3. Signed request (OAC)" --> s3
 
-    dev --> gha
-    gha -- "OIDC token" --> iam
-    iam -- "Short-lived credentials" --> gha
-    gha -- "s3 sync" --> s3
-    gha -- "Cache invalidation" --> cf
+    dev -.-> gha
+    gha -. "A. OIDC token for short-lived credentials" .-> iam
+    gha -. "B. s3 sync" .-> s3
+    gha -. "C. Cache invalidation" .-> cf
 ```
+
+Solid arrows are a visitor loading the site. Dashed arrows are a deploy.
 
 ## How it works
 
