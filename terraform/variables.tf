@@ -27,3 +27,8 @@ variable "github_branch" {
   type        = string
   default     = "main"
 }
+
+variable "alert_email" {
+  description = "Email address for AWS account alerts (billing, etc.)"
+  type        = string
+}

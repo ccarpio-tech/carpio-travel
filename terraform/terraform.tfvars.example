@@ -1,5 +1,8 @@
-# Copy to terraform.tfvars and adjust. terraform.tfvars is git-ignored.
-# Never put AWS credentials in this file.
+# Copy to terraform.tfvars and fill in (terraform.tfvars is gitignored)
+# No AWS credentials here (Terraform gets them from aws login or OIDC)
 
 aws_region   = "us-east-1"
 project_name = "carpio-travel"
+
+# Where AWS Budgets sends cost alerts (required, no default)
+alert_email = "you@example.com"
