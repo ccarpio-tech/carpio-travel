@@ -25,7 +25,7 @@ AWS · Terraform · GitHub Actions · S3 · CloudFront · Route 53 · ACM · IAM
 ## Architecture
 
 ```mermaid
-flowchart LR
+flowchart TB
     visitor["Visitor"]
     r53["Route 53<br/>DNS for carpiotravel.com"]
     cf["CloudFront<br/>HTTPS with ACM certificate"]
