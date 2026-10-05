@@ -1,24 +1,19 @@
-# Look up the current AWS account ID (read-only, creates nothing).
 data "aws_caller_identity" "current" {}
 
 locals {
-  # S3 bucket names are globally unique, so suffix with the account ID.
+  # Bucket names are global (account ID suffix keeps it unique)
   bucket_name = "${var.project_name}-site-${data.aws_caller_identity.current.account_id}"
 }
 
-# ------------------------------------------------------------------------------
-# S3 origin bucket (private; only CloudFront will be allowed to read it)
-# ------------------------------------------------------------------------------
-
+# S3 bucket for the site files (private; only CloudFront can read it)
 resource "aws_s3_bucket" "site" {
   bucket = local.bucket_name
 
-  # Allows `terraform destroy` to delete the bucket even when it contains site
-  # files. Convenient for a portfolio environment; remove for production.
+  # Lets `terraform destroy` delete it with files still inside
+  # (fine for a portfolio, remove for production)
   force_destroy = true
 }
 
-# Block every form of public access (ACLs and bucket policies).
 resource "aws_s3_bucket_public_access_block" "site" {
   bucket = aws_s3_bucket.site.id
 
@@ -28,7 +23,7 @@ resource "aws_s3_bucket_public_access_block" "site" {
   restrict_public_buckets = true
 }
 
-# Disable ACLs entirely; access is controlled only by the bucket policy.
+# Turn off ACLs (access is controlled only by the bucket policy)
 resource "aws_s3_bucket_ownership_controls" "site" {
   bucket = aws_s3_bucket.site.id
 
@@ -37,7 +32,6 @@ resource "aws_s3_bucket_ownership_controls" "site" {
   }
 }
 
-# Encrypt objects at rest with S3-managed keys (SSE-S3).
 resource "aws_s3_bucket_server_side_encryption_configuration" "site" {
   bucket = aws_s3_bucket.site.id
 
@@ -48,10 +42,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "site" {
   }
 }
 
-# ------------------------------------------------------------------------------
 # CloudFront Origin Access Control (CloudFront signs its requests to S3)
-# ------------------------------------------------------------------------------
-
 resource "aws_cloudfront_origin_access_control" "site" {
   name                              = "${var.project_name}-oac"
   description                       = "Lets CloudFront read the private ${local.bucket_name} bucket"
@@ -60,11 +51,7 @@ resource "aws_cloudfront_origin_access_control" "site" {
   signing_protocol                  = "sigv4"
 }
 
-# ------------------------------------------------------------------------------
-# CloudFront distribution
-# ------------------------------------------------------------------------------
-
-# AWS-managed cache policy, looked up by name rather than hardcoding its ID.
+# AWS-managed cache policy (looked up by name instead of hardcoding the ID)
 data "aws_cloudfront_cache_policy" "caching_optimized" {
   name = "Managed-CachingOptimized"
 }
@@ -74,13 +61,13 @@ resource "aws_cloudfront_distribution" "site" {
   is_ipv6_enabled     = true
   comment             = "${var.project_name} static site"
   default_root_object = "index.html"
-  price_class         = "PriceClass_100" # North America + Europe edges only
+  price_class         = "PriceClass_100" # North America + Europe edges only (cheapest)
 
-  # Custom domains CloudFront will answer for; each must be on the ACM cert.
+  # Domains CloudFront answers for (each must be on the ACM cert)
   aliases = [var.domain_name, "www.${var.domain_name}"]
 
   origin {
-    # REST endpoint (not the S3 website endpoint), required for OAC.
+    # S3 REST endpoint (not the website endpoint, which OAC doesn't support)
     domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
     origin_id                = "s3-${local.bucket_name}"
     origin_access_control_id = aws_cloudfront_origin_access_control.site.id
@@ -102,18 +89,14 @@ resource "aws_cloudfront_distribution" "site" {
   }
 
   viewer_certificate {
-    # Reference the validation waiter (not the cert) so CloudFront only ever
-    # gets an ISSUED certificate.
+    # Use the validation waiter, not the cert (so CloudFront only gets an issued cert)
     acm_certificate_arn      = aws_acm_certificate_validation.site.certificate_arn
-    ssl_support_method       = "sni-only"     # free; "vip" is $600/month
-    minimum_protocol_version = "TLSv1.2_2021" # no TLS 1.0/1.1
+    ssl_support_method       = "sni-only"     # free ("vip" is $600/month)
+    minimum_protocol_version = "TLSv1.2_2021" # TLS 1.2+ only (no 1.0/1.1)
   }
 }
 
-# ------------------------------------------------------------------------------
-# Bucket policy: allow reads only from this CloudFront distribution
-# ------------------------------------------------------------------------------
-
+# Bucket policy (only this CloudFront distribution can read objects)
 data "aws_iam_policy_document" "site_bucket" {
   statement {
     sid       = "AllowCloudFrontOACRead"
@@ -137,6 +120,6 @@ resource "aws_s3_bucket_policy" "site" {
   bucket = aws_s3_bucket.site.id
   policy = data.aws_iam_policy_document.site_bucket.json
 
-  # Apply the policy after Block Public Access is in place.
+  # Apply after Block Public Access (avoids S3 conflict errors if both change at once)
   depends_on = [aws_s3_bucket_public_access_block.site]
 }

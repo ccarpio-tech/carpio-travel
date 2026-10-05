@@ -17,6 +17,7 @@ data "aws_iam_policy_document" "github_trust" {
       variable = "token.actions.githubusercontent.com:aud"
       values   = ["sts.amazonaws.com"]
     }
+    # Only this repo on main (the IDs stop anyone who re-creates the repo name from matching)
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
@@ -31,18 +32,21 @@ resource "aws_iam_role" "github" {
 }
 
 data "aws_iam_policy_document" "github_deploy" {
-
+  # Object-level actions go on bucket/* (upload and delete files)
   statement {
     actions   = ["s3:PutObject", "s3:DeleteObject"]
     resources = ["${aws_s3_bucket.site.arn}/*"]
     sid       = "S3Deploy"
   }
 
+  # Clear the CloudFront cache after a deploy (distribution ARN, no /* like S3)
   statement {
     actions   = ["cloudfront:CreateInvalidation"]
     resources = [aws_cloudfront_distribution.site.arn]
     sid       = "CloudFrontInvalidation"
   }
+
+  # Bucket-level action goes on the bucket itself (sync lists it to find changes)
   statement {
     actions   = ["s3:ListBucket"]
     resources = [aws_s3_bucket.site.arn]

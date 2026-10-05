@@ -17,7 +17,7 @@ variable "domain_name" {
 }
 
 variable "github_repo" {
-  description = "Github owner@id/repo@id as it apppears in the OIDC token"
+  description = "GitHub owner@id/repo@id as it appears in the OIDC token"
   type        = string
   default     = "ccarpio-tech@287112669/carpio-travel@1402034081"
 }

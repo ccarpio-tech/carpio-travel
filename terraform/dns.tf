@@ -1,56 +1,34 @@
-# ------------------------------------------------------------------------------
-# Route 53 hosted zone (created automatically by Route 53 domain registration)
-# ------------------------------------------------------------------------------
-
-# Adopt the existing zone into Terraform state instead of creating a new one.
-# A new zone would get different name servers than the ones the registrar
-# delegates to, so its records would never be seen on the internet.
-# Safe to delete this block after the import has been applied.
-import {
-  to = aws_route53_zone.main
-  id = "Z092586711YSA8MMC7VLG"
-}
-
+# Route 53 hosted zone (created automatically when the domain was registered)
 resource "aws_route53_zone" "main" {
   name = var.domain_name
 
-  # Match the comment AWS set at registration so the import shows no drift.
+  # Same description AWS gave the zone (otherwise Terraform tries to change it)
   comment = "HostedZone created by Route53 Registrar"
 
   lifecycle {
-    # Deleting this zone would break the domain's NS delegation.
+    # Can't be destroyed (deleting it would break the domain's name servers)
     prevent_destroy = true
   }
 }
 
-# ------------------------------------------------------------------------------
-# ACM certificate for the custom domain (validated via DNS in Route 53)
-# ------------------------------------------------------------------------------
-
+# ACM certificate for the domain (validated with DNS records in Route 53)
 resource "aws_acm_certificate" "site" {
-  # CloudFront only accepts certificates from us-east-1, regardless of the
-  # provider's default region.
+  # Must be us-east-1 (CloudFront only accepts certs from there)
   region = "us-east-1"
 
   domain_name               = var.domain_name
   subject_alternative_names = ["www.${var.domain_name}"]
 
-  # Prove ownership with a CNAME record; ACM auto-renews while it stays in place.
+  # Prove ownership with a CNAME record (ACM auto-renews as long as it stays)
   validation_method = "DNS"
 
   lifecycle {
-    # A replacement cert must exist before the old one (attached to CloudFront)
-    # can be deleted.
+    # Create the new cert before deleting the old one (CloudFront is using it)
     create_before_destroy = true
   }
 }
 
-# ------------------------------------------------------------------------------
-# DNS validation: publish ACM's CNAMEs, then wait for the cert to be issued
-# ------------------------------------------------------------------------------
-
-# One CNAME per name on the cert, keyed by domain name. The keys come from
-# config so they are known at plan time; the values come from ACM.
+# One validation record per domain on the cert (carpiotravel.com and www)
 resource "aws_route53_record" "cert_validation" {
   for_each = {
     for dvo in aws_acm_certificate.site.domain_validation_options : dvo.domain_name => {
@@ -66,12 +44,12 @@ resource "aws_route53_record" "cert_validation" {
   records = [each.value.record]
   ttl     = 60
 
-  # Take over an identical record if one was already created outside Terraform.
+  # Overwrite the record if it already exists (e.g. created outside Terraform)
   allow_overwrite = true
 }
 
-# Not an AWS object: blocks until ACM reports the cert as ISSUED. CloudFront
-# references this resource so it never gets a pending cert.
+# Waits until the cert is issued (creates nothing in AWS)
+# CloudFront points here, not at the cert (so it never gets an unissued one)
 resource "aws_acm_certificate_validation" "site" {
   region = "us-east-1"
 

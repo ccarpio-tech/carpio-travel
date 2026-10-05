@@ -1,22 +1,19 @@
 terraform {
-  # Minimum Terraform CLI version this configuration is tested with.
   required_version = ">= 1.10"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 6.0" # any 6.x release, never 7.0 (major versions can have breaking changes)
+      version = "~> 6.0"
     }
   }
 }
 
-# Credentials are NOT configured here. The provider uses the standard AWS
-# credential chain: locally that's the AWS CLI login session / profile, and in
-# GitHub Actions it's short-lived credentials from OIDC.
+# No credentials here (locally it uses the AWS CLI login,
+# in GitHub Actions it uses short-lived OIDC credentials)
 provider "aws" {
   region = var.aws_region
 
-  # Applied to every taggable resource this provider creates.
   default_tags {
     tags = {
       Project   = var.project_name
