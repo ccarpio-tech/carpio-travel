@@ -24,33 +24,9 @@ AWS · Terraform · GitHub Actions · S3 · CloudFront · Route 53 · ACM · IAM
 
 ## Architecture
 
-```mermaid
-flowchart TB
-    visitor["Visitor"]
-    dev["git push to main"]
+![CarpioTravel architecture diagram](docs/architecture.png)
 
-    subgraph github["GitHub"]
-        gha["GitHub Actions"]
-    end
-
-    subgraph aws["AWS"]
-        r53["Route 53<br/>DNS for carpiotravel.com"]
-        cf["CloudFront<br/>HTTPS with ACM certificate"]
-        s3[("S3 bucket<br/>private")]
-        iam["IAM role<br/>trusted via OIDC"]
-    end
-
-    visitor -- "1. DNS lookup" --> r53
-    visitor -- "2. HTTPS request" --> cf
-    cf -- "3. Signed request (OAC)" --> s3
-
-    dev -.-> gha
-    gha -. "A. OIDC token for short-lived credentials" .-> iam
-    gha -. "B. s3 sync" .-> s3
-    gha -. "C. Cache invalidation" .-> cf
-```
-
-Solid arrows are a visitor loading the site. Dashed arrows are a deploy.
+Editable source: [`docs/architecture.drawio`](docs/architecture.drawio) (open in [diagrams.net](https://app.diagrams.net))
 
 ## How it works
 
@@ -92,6 +68,9 @@ It taught me the difference between a role's trust policy (who can assume it) an
 
 ```
 site/                       Static site files (HTML, CSS, JS, images)
+docs/
+  architecture.png          Architecture diagram
+  architecture.drawio       Editable diagram source
 .github/workflows/
   deploy.yml                Deploys site/ to S3 on every push to main
 terraform/
