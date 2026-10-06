@@ -1,11 +1,11 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="CarpioTravel" id="carpio">
+  <diagram name="Carpio Travel" id="carpio">
     <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="780" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
-        <mxCell id="title" value="CarpioTravel" style="text;html=1;fontSize=30;fontStyle=1;fontColor=#232F3E;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="title" value="Carpio Travel" style="text;html=1;fontSize=30;fontStyle=1;fontColor=#232F3E;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="40" y="20" width="400" height="40" as="geometry"/>
         </mxCell>
         <mxCell id="subtitle" value="Static site on AWS · Terraform · GitHub Actions with OIDC" style="text;html=1;fontSize=15;fontColor=#545B64;align=left;verticalAlign=middle;" vertex="1" parent="1">
