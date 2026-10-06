@@ -1,4 +1,4 @@
-# CarpioTravel
+# Carpio Travel
 
 A travel site about my solo backpacking trip through Thailand, Cambodia, Laos and Vietnam, hosted on AWS, provisioned with Terraform and deployed with GitHub Actions.
 
