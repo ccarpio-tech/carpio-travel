@@ -44,13 +44,21 @@ Editable source: [`docs/architecture.drawio`](docs/architecture.drawio) (open in
 
 ## Security
 
-- **No public bucket.** S3 Block Public Access is on, ACLs are disabled and only CloudFront can read objects (Origin Access Control).
+- **No public buckets.** S3 Block Public Access is on for both buckets, ACLs are disabled and only CloudFront can read the site files (Origin Access Control).
 - **No stored AWS keys.** GitHub Actions authenticates with OIDC and receives short-lived AWS credentials.
 - **Locked-down trust policy.** The role only trusts this repo on `main`, matched by GitHub's numeric owner and repo IDs, so a re-created repo with the same name can't assume it.
 - **Least-privilege deploy role.** It can upload and delete site files, list the bucket and invalidate the cache. Nothing else.
 - **Encryption.** HTTPS only (HTTP redirects), TLS 1.2 minimum, and S3 server-side encryption at rest.
 - **Cost guardrail.** An AWS Budgets alert emails me if monthly spend passes 80% of the limit, or is forecast to pass 100%.
-- **Secrets stay out of git.** State, plan and variable files are gitignored.
+- **Secrets stay out of git.** Variable and plan files are gitignored, and Terraform state lives in a private S3 bucket instead of the repo.
+
+## Terraform state
+
+Terraform state is stored remotely in a private, encrypted S3 bucket instead of only on my laptop.
+
+- **Versioning** keeps every previous copy of the state, so I can recover from a bad change.
+- **Native S3 locking** (`use_lockfile`, Terraform 1.10+) stops two runs from changing the state at the same time, with no DynamoDB table needed.
+- **`prevent_destroy`** means the bucket can't be deleted (the state file lives there).
 
 ## Cost
 
@@ -64,6 +72,10 @@ While troubleshooting, I found that my `github_repo` variable was set to the pla
 
 It taught me the difference between a role's trust policy (who can assume it) and its permissions policy (what it can do once assumed).
 
+After the site went live, I ran into another dilemma: the Terraform state file still only lived on my laptop (if the laptop died, Terraform would forget everything it built). I created a private S3 bucket and migrated the state into it. I turned on versioning for that bucket, so if the state file ever gets deleted or broken, I can restore an older copy.
+
+I also realized my website bucket doesn't need versioning (the site files are already in git, so every change is saved in the commit history).
+
 ## Repo layout
 
 ```
@@ -74,12 +86,13 @@ docs/
 .github/workflows/
   deploy.yml                Deploys site/ to S3 on every push to main
 terraform/
-  providers.tf              Terraform and AWS provider versions, default tags
+  providers.tf              Terraform and AWS provider versions, S3 backend, default tags
   variables.tf              Inputs (region, domain, GitHub repo, alert email)
   main.tf                   S3 bucket, CloudFront distribution, OAC, bucket policy
   dns.tf                    Route 53 zone and records, ACM certificate and validation
   github-oidc.tf            OIDC provider, deploy role and its permissions
   budgets.tf                Monthly cost budget with email alerts
+  state.tf                  S3 bucket for remote Terraform state
   outputs.tf                Bucket name, distribution ID, site URL
   terraform.tfvars.example  Template for terraform.tfvars
 ```
@@ -90,15 +103,15 @@ Requirements: Terraform 1.10+, the AWS CLI, an AWS account and a domain with a R
 
 1. Copy `terraform/terraform.tfvars.example` to `terraform/terraform.tfvars` and set your domain, GitHub repo, branch and alert email.
 2. Import your existing hosted zone into `aws_route53_zone.main` (otherwise Terraform creates a second zone your domain doesn't point to).
-3. From `terraform/`, run:
+3. In `providers.tf`, comment out the `backend "s3"` block for the first run (the state bucket doesn't exist yet). From `terraform/`, run:
    ```
    terraform init
    terraform plan -out=tfplan
    terraform apply tfplan
    ```
-4. Update the `env` values in `.github/workflows/deploy.yml` with your bucket name and distribution ID (from `terraform output`) and your deploy role ARN, then push to `main`.
+4. Put your state bucket name in the `backend "s3"` block, uncomment it and run `terraform init -migrate-state` to move the state into S3.
+5. Update the `env` values in `.github/workflows/deploy.yml` with your bucket name and distribution ID (from `terraform output`) and your deploy role ARN, then push to `main`.
 
 ## What's next
 
-- Move Terraform state to an S3 backend with versioning and native S3 locking
 - More travel stories
