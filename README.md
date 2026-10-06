@@ -6,7 +6,7 @@ A travel site about my solo backpacking trip through Thailand, Cambodia, Laos an
 
 ## Why I built it
 
-I built this project to showcase my work and something I really care about. I love traveling. I backpacked Southeast Asia alone for a couple of months, starting in Thailand, then Cambodia, Laos and finally Vietnam. I came back with so many memories and stories, and I met some amazing people along the way. CarpioTravel is a small piece of the world through my eyes.
+I built this project to showcase my work and something I really care about. I love traveling. I backpacked Southeast Asia alone for a couple of months, starting in Thailand, then Cambodia, Laos and finally Vietnam. I came back with so many memories and stories, and I met some amazing people along the way. Carpio Travel is a small piece of the world through my eyes.
 
 I also wanted it to show my cloud progress over the past year. Instead of just collecting certifications, I wanted to build something real with AWS and Terraform and actually understand how it all fits together. I plan to keep adding to it (more stories, more trips, more things that went wrong).
 
@@ -24,7 +24,7 @@ AWS · Terraform · GitHub Actions · S3 · CloudFront · Route 53 · ACM · IAM
 
 ## Architecture
 
-![CarpioTravel architecture diagram](docs/architecture.png)
+![Carpio Travel architecture diagram](docs/architecture.png)
 
 Editable source: [`docs/architecture.drawio`](docs/architecture.drawio) (open in [diagrams.net](https://app.diagrams.net))
 
